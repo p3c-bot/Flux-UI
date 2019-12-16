@@ -29,7 +29,7 @@ function activateUI(cropAddress) {
     // Address and links 
     $("#copyAddressButton").attr("data-clipboard-text", myCropAddress);
     $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
-    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="https://dconnolly95.github.io/Odyssey/?ref=' + myCropAddress + '">https://dconnolly95.github.io/Odyssey/index.html?ref=' + myCropAddress + '</a>')
+    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="/?ref=' + myCropAddress + '">Link Active</a>')
     $("#copyMNButton").attr("data-clipboard-text", 'https://p3c.io/index.html?ref=' + myCropAddress);
 
     // Enable buttons
