@@ -62,39 +62,84 @@
                     <div class="container">
                         <h1 class="display-3">Broadcaster</h1>
                         <p>Store your ad on-chain and show it across the Commonwealth network!</p>
+                        <a class="btn btn-block btn-success" href="#" data-toggle="modal" data-target="#sponsorPurchaseModal"><i class="fas fa-plus"></i> Buy Adspace</a><br />
+                        <a class="btn btn-block btn-info" href="#" data-toggle="modal" data-target="#sponsorInstructorModal"><i class="fas fa-plus"></i> How to Use</a><br />
+                        <a class="btn btn-block btn-warning" href="#" data-toggle="modal" data-target="#sponsorDetailsModal"><i class="fas fa-plus"></i> Current Details</a><br />
                     </div>
                 </div>
             </div>
             
             <div class="col-md-6">
-                <div class="card border-primary">
-                    <div class="card-header bg-default text-white">Current Ad</div>
-                    <div class="card-body">
-                        <div id="currentImg" class="sponsorPrice">1234/token</div>
-                        <h3><span id="currentText" class="sponsorPrice">1234/token</span></h3>
-                        <p><span id="currentLinkText" class="sponsorPrice">1234/token</span></p>
-                        <span id="currentLink" class="btn btn-block btn-primary">1234/token</span>
-                        <hr />
-                        <p>
-                            <b>Owner <span id="owner"></span></b>
-                            <i><span id="time" class="sponsorPrice"></span><span id="purchasePrice" class="sponsorPrice"></span></i>
-                        </p>
-                    </div>
+                <div class="jumbotron sponsor">
+                    <div class="container">
+                        <h2>Current Broadcast:</h2>
+                        <div id="current"></div>
+                    </div>			
                 </div>
-                
-            <button id="sample" class="btn btn-block btn-info">See example</button>
-            <div class="row sponsor">
-                <h2>Sample Broadcast (Fill out fields above and press button to see what your broadcast will look like):</h2>
-                <div id="sampleAd" class="current"></div>
-            </div>
             </div>
         </div>
         
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card border-primary">
-                    <div class="card-header bg-default text-white">How To</div>
-                    <div class="card-body">
+        
+    </div>
+    
+    <div class="modal" id="sponsorPurchaseModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Buy Adspace</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form class="ui form">
+                        <div class="form-group">
+                            <label>Img URL (30x30) - Optional:</label>
+                            <input type="text" id="imgLink" class="form-control" placeholder="https://i.imgur.com/7iEyv4Q.png">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Text</label>
+                            <input type="text" id="text" class="form-control" placeholder="New ICO incoming!">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link Text</label>
+                            <input type="text" id="hyperlinkText" class="form-control" placeholder="Click Here.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link (include http/https):</label>
+                            <input type="text" id="hyperlink" class="form-control" placeholder="https://company.com">
+                        </div>
+                    </form>
+                    
+                    <div class="row sponsor">
+                        <p>Preview: </p>
+                        <div id="sampleAd" class="current"></div>
+                    </div>
+                    <button id="sample"   class="btn btn-block btn-info">Generate Preview</button>
+                    <button id="purchase" class="btn btn-block btn-success">Purchase for <div id="price">price</div></button>
+                    
+                    
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="sponsorInstructorModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  How to Use</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
                         <p>There are 2 simple steps to broadcasting on the Commonwealth network.</p>
                         <ul>
                             <li>1. Make sure you have an <a target="_blank" href="https://forum.saturn.network/t/how-to-install-saturn-wallet-create-a-new-account/1302">ETC wallet</a> with ETC in it.</li>
@@ -106,55 +151,6 @@
                             <li>Your image link should link to the actual image, make sure URL ends with .jpeg , .jpg , .gif , .svg, or .png</li>
                             <li>Broadcast is stored permanently on the blockchain and can be read by any Ethereum Classic node! Also hosted on our <a target="_blank" href="https://api.p3c.io/sponsor/">server</a></li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="card border-primary">
-                    <div class="card-header bg-default text-white">Buy Now</div>
-                    <div class="card-body">
-                        <form class="ui form">
-                            <label>Img URL (30x30) - Optional:</label>
-                            <input type="text" id="imgLink" placeholder="https://i.imgur.com/7iEyv4Q.png">
-
-                            <label>Text</label>
-                            <input type="text" id="text" placeholder="New ICO incoming!">
-
-                            <label>Link Text</label>
-                            <input type="text" id="hyperlinkText" placeholder="Click Here.">
-
-                            <label>Link (include http/https):</label>
-                            <input type="text" id="hyperlink" placeholder="https://company.com">
-                        </form>
-                        <button id="purchase" class="btn btn-block btn-success">Purchase for <div id="price">price</div></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row jumbotron sponsor">
-            <div class="container">
-                <h2>Current Broadcast:</h2>
-                <div id="current" class="current"></div>
-            </div>			
-        </div>
-    </div>
-    
-    <div class="modal" id="sponsorPurchaseModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Transfer Points</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <div class="modal-body">
-                        <b>Pure Address:</b> <span id="myCropAddress" class="approx"></span>
-                        <button id="copyAddressButton" class="btn btn-block btn-warning" data-clipboard-text=""><i class="copy icon"></i> Copy Address</button><br />
-                        <input type="text" id="transferAddress" class="form-control" placeholder="Destination Address"><br />
-                        <input type="text" id="transferTokenCount" class="form-control" placeholder="Amount of Points"><br />
-                        <button id="transfer" class="btn btn-block btn-info"><i class="right arrow icon"></i> Transfer</button>
                     </div>
 
                     <div class="modal-footer">
@@ -168,16 +164,20 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Transfer Points</h4>
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Sponsor Details</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
                     <div class="modal-body">
-                        <b>Pure Address:</b> <span id="myCropAddress" class="approx"></span>
-                        <button id="copyAddressButton" class="btn btn-block btn-warning" data-clipboard-text=""><i class="copy icon"></i> Copy Address</button><br />
-                        <input type="text" id="transferAddress" class="form-control" placeholder="Destination Address"><br />
-                        <input type="text" id="transferTokenCount" class="form-control" placeholder="Amount of Points"><br />
-                        <button id="transfer" class="btn btn-block btn-info"><i class="right arrow icon"></i> Transfer</button>
+                        <div id="currentImg" class="sponsorPrice">1234/token</div>
+                        <h3><span id="currentText" class="sponsorPrice">1234/token</span></h3>
+                        <p><span id="currentLinkText" class="sponsorPrice">1234/token</span></p>
+                        <span id="currentLink" class="btn btn-block btn-primary">1234/token</span>
+                        <hr />
+                        <p>
+                            <b>Owner <span id="owner"></span></b>
+                            <i><span id="time" class="sponsorPrice"></span><span id="purchasePrice" class="sponsorPrice"></span></i>
+                        </p>
                     </div>
 
                     <div class="modal-footer">
