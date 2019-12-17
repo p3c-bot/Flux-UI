@@ -23,10 +23,14 @@
     <link rel="stylesheet" href="assets/css/alertify.min.css" />
     <!-- Default theme -->
     <link rel="stylesheet" href="assets/css/themes/default.min.css" />
+    <link rel="stylesheet" href="assets/css/dappsdirect.css" />
     <link rel="stylesheet" href="assets/css/powh5_style.css" />
 
     <!-- Bootstrap theme -->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
 
     <link rel="icon" type="image/png" href="assets/img/etc.png">
 </head>
@@ -57,45 +61,44 @@
     <br />
     
     <div class="container">
-        <div class="row jumbotron">
-            <div class="container">
-                <h1 class="display-3">Odyssey</h1>
-                <p>Custom Pure UI for Commonwealth.gg</p>
-            </div>
+        
+        
+        <div class="row">
+                <div class="row jumbotron">
+                    <div class="container">
+                        <h1 class="display-3">Odyssey</h1>
+                        <p>Custom Pure UI for Commonwealth.gg</p>
+                        <div id="sponsor" class="sponsor"></div>
+                        <span class="ui text blue small" style="float: right">
+                            <a href="https://p3c.io/sponsor.html" target="_blank">Purchase this Ad with ETC</a>
+                        </span>
+                    </div>
+                </div>
+                <br />
+                
         </div>
         
         <div class="row">
-            <div class="col-md-6">
-                <div class="card border-default">
-                    <div class="card-header bg-default text-white">Welcome</div>
-                    <div class="card-body">
-                        <h3>What is Odyssey?</h3>
-                        <p>Odyssey is a new project built upon Commonwealth P3C - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
-                        <br />
-                        Odyssey has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://p3c.io/use.html">The original Commonwealth interface</a>.</p>
-                        <br />
-                        <a href="wallet.html" class="btn btn-primary btn-block">Account Overview</a>
-                    </div>
-                </div>
-                <br />
+            <div class="jumbotron">
+                <table class="table table-hover" id="dapps">
+                    <thead>
+                        <tr>
+                            <th scope="col">Users (72Hr)</th>
+                            <th scope="col">Tx (72Hr)</th>
+                            <th scope="col">Dapp</th>
+                            <th scope="col">Locked (ETC)</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Volume (72Hr)</th>
+                            <th scope="col">Help</th>
+                            <th scope="col">Smart Contract</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
+    
             
-            <div class="col-md-6">
-                <div class="card border-default">
-                    <div class="card-header bg-default text-white">About Odyssey</div>
-                    <div class="card-body">
-                        <p>If you have any questions about Odyssey, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!</p>
-                        <a href="https://t.me/OdysseyETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a><br />
-                        <a href="https://github.com/odysseyDapps/Odyssey" class="btn btn-secondary btn-block" target="_blank">GitHub</a><br />
-                        <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/transactions" class="btn btn-info btn-block" target="_blank">Blockscout</a><br />
-                    </div>
-                </div>
-                <br />
-            </div>
         </div>
-        
-            
-        
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -104,12 +107,17 @@
     <script src="assets/js/web3.min.js"></script>
     <script src="assets/js/clipboard.min.js"></script>
     <script src="assets/js/lodash.min.js"></script>
+    <script src="assets/js/underscore.min.js"></script>
+    <script src="assets/js/bluebird.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
     <script src="assets/lib/util.js"></script>
     <script src="assets/lib/contracts.js"></script>
     <script src="assets/lib/pure.js"></script>
     <script src="assets/lib/rainmaker.js"></script>
     <script src="assets/lib/masternode.js"></script>
+    <script src="assets/lib/dappdirect.main.js"></script>
     <script src="assets/lib/use.js"></script>
 </body>
 </html>

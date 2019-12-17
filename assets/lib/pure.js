@@ -63,10 +63,6 @@ function getMyCropDividends() {
             if (change) {
                 amount = web3.fromWei(myCropDividends).toFixed(8)
                 $("#myCropDividends").replaceWith("<b id='myCropDividends'>" + amount  + "</b>")
-                $('#myCropDividends').transition({
-                    animation: 'flash',
-                    duration: '1s',
-                });
             }
         }
     });
@@ -85,10 +81,6 @@ function getMyCropTokens() {
                     myETCValue = (sellPrice * web3.fromWei(myCropTokens))
                     $('#myETCValue').text(numberWithCommas(myETCValue.toFixed(1)))
                 })
-                $('#myCropTokens').transition({
-                    animation: 'flash',
-                    duration: '1s',
-                });
             }
         }
     });

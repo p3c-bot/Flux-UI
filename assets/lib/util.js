@@ -2,6 +2,8 @@ const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+
+
 function playSound(filename) {
     var mp3Source = '<source src="' + 'doc-assets/' + filename + '.mp3" type="audio/mpeg">';
     var embedSource = '<embed hidden="true" autostart="true" loop="false" src="doc-assets/' + filename + '.mp3">';
@@ -32,4 +34,55 @@ function getNetworkId(web3) {
         version = web3.currentProvider.publicConfigStore._state.networkVersion.toString();
         resolve(version)
     });
+}
+
+$.fn.draggable = function () {
+    var $this = this,
+        ns = 'draggable_' + (Math.random() + '').replace('.', ''),
+        mm = 'mousemove.' + ns,
+        mu = 'mouseup.' + ns,
+        $w = $(window),
+        isFixed = ($this.css('position') === 'fixed'),
+        adjX = 0,
+        adjY = 0;
+
+    $this.mousedown(function (ev) {
+        var pos = $this.offset();
+        if (isFixed) {
+            adjX = $w.scrollLeft();
+            adjY = $w.scrollTop();
+        }
+        var ox = (ev.pageX - pos.left),
+            oy = (ev.pageY - pos.top);
+        $this.data(ns, {
+            x: ox,
+            y: oy
+        });
+        $w.on(mm, function (ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            if (isFixed) {
+                adjX = $w.scrollLeft();
+                adjY = $w.scrollTop();
+            }
+            var offset = $this.data(ns);
+            $this.css({
+                left: ev.pageX - adjX - offset.x,
+                top: ev.pageY - adjY - offset.y
+            });
+        });
+        $w.on(mu, function () {
+            $w.off(mm + ' ' + mu).removeData(ns);
+        });
+    });
+
+    return this;
+};
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+    });
+    return vars;
 }

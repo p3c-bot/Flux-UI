@@ -18,11 +18,14 @@
     <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps,Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+    
     <link rel="stylesheet" href="assets/css/semantic.min.css">
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/alertify.min.css" />
-    <!-- Default theme -->
     <link rel="stylesheet" href="assets/css/themes/default.min.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/jspanel.min.css">
+    <link rel="stylesheet" href="assets/css/watch.css">
     <link rel="stylesheet" href="assets/css/powh5_style.css" />
 
     <!-- Bootstrap theme -->
@@ -57,44 +60,29 @@
     <br />
     
     <div class="container">
-        <div class="row jumbotron">
-            <div class="container">
-                <h1 class="display-3">Odyssey</h1>
-                <p>Custom Pure UI for Commonwealth.gg</p>
-            </div>
-        </div>
-        
         <div class="row">
-            <div class="col-md-6">
-                <div class="card border-default">
-                    <div class="card-header bg-default text-white">Welcome</div>
-                    <div class="card-body">
-                        <h3>What is Odyssey?</h3>
-                        <p>Odyssey is a new project built upon Commonwealth P3C - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
-                        <br />
-                        Odyssey has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://p3c.io/use.html">The original Commonwealth interface</a>.</p>
-                        <br />
-                        <a href="wallet.html" class="btn btn-primary btn-block">Account Overview</a>
-                    </div>
-                </div>
-                <br />
+            <div class="col-md-8">
+                
+                <div id="videoStream"></div>
             </div>
-            
-            <div class="col-md-6">
-                <div class="card border-default">
-                    <div class="card-header bg-default text-white">About Odyssey</div>
-                    <div class="card-body">
-                        <p>If you have any questions about Odyssey, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!</p>
-                        <a href="https://t.me/OdysseyETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a><br />
-                        <a href="https://github.com/odysseyDapps/Odyssey" class="btn btn-secondary btn-block" target="_blank">GitHub</a><br />
-                        <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/transactions" class="btn btn-info btn-block" target="_blank">Blockscout</a><br />
+ 
+            <div class="col-md-4">
+                
+                <div id="chat" class="jumbotron">
+                    <span id="broadcast" class="count blink_me"></span>
+                    <p>My Points: <span id="myCropTokens" class="count"></span> <span id="myCropValue" class="count"></span></p>
+                    
+                    <div id="message">
+                        <input class="form-control" id='msg' placeholder='<Your Message Here>' /><br />
+                        <button id='done' class='btn btn-block btn-success' style="color: black;"> Nil </button>
                     </div>
+                    
+                    <a href="#" id='handle'>Hide</a>
                 </div>
-                <br />
             </div>
         </div>
         
-            
+        
         
     </div>
 
@@ -104,12 +92,37 @@
     <script src="assets/js/web3.min.js"></script>
     <script src="assets/js/clipboard.min.js"></script>
     <script src="assets/js/lodash.min.js"></script>
+    <script src="assets/js/jspanel.min.js"></script>
 
     <script src="assets/lib/util.js"></script>
     <script src="assets/lib/contracts.js"></script>
+    <script src="assets/lib/stream.js"></script>
+    <script src="assets/lib/farm.js"></script>
     <script src="assets/lib/pure.js"></script>
     <script src="assets/lib/rainmaker.js"></script>
     <script src="assets/lib/masternode.js"></script>
     <script src="assets/lib/use.js"></script>
-</body>
+    
+    
+    
+    <script>
+        $(function () {
+            $("#chat").draggable({
+                iframeFix: true
+            });
+        });
+    </script>
+
+    <script>
+        setTimeout(function () {
+            getCropInfo(true)
+            setPrice()
+        }, 500)
+        setInterval(function () {
+            getCropInfo(false)
+            getMessage()
+        }, 2000);
+    </script>
+    
+    </body>
 </html>
