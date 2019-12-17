@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@P3COfficial" />
+    <meta name="twitter:title" content="P3C.io" />
+    <meta name="twitter:description" content="Commonwealth is a peer-to-peer algorithmic bank built on Ethereum Classic. P3C holders receive passive income as the system is used. Ditch your bank, go with P3C." />
+    <meta name="twitter:image" content="https://p3c.io/img/coin.png"/>
+    <meta property="og:url" content="https://p3c.io" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="P3C.io" />
+    <meta property="og:description" content="Planetary Prosperity is a peer-to-peer algorithmic bank built on Ethereum Classic. P3C holders receive passive income as the system is used. Ditch your bank, go with P3C." />
+    <meta property="og:image" content="https://p3c.io/img/coin.png"/>
+    <title>Odyssey</title>
+    <meta charset="utf8">
+    <meta name="description" content="Fast, passive payments for anyone using Ethereum Classic. Provides a steady source of income for entrepeneuers and nomads. Use algorithms and sound money to plan for the future and gain peace of mind.">
+    <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps,Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <link rel="stylesheet" href="assets/css/semantic.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="assets/css/themes/default.min.css" />
+    <link rel="stylesheet" href="assets/css/farmer.css" />
+    <link rel="stylesheet" href="assets/css/powh5_style.css" />
+
+    <!-- Bootstrap theme -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" href="assets/img/etc.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"> Odyssey</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="wallet.html">Wallet</a></li>
+                <li class="nav-item"><a class="nav-link" href="broadcaster.html">Broadcaster</a></li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-secondary btn-block my-2 my-sm-0" type="submit"><i class="chess rook icon"></i> <span id="etcInContract">0</span></button>
+            </form>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <br />
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1 class="display-3">Broadcaster</h1>
+                        <p>Store your ad on-chain and show it across the Commonwealth network!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card border-primary">
+                    <div class="card-header bg-default text-white">Current Ad</div>
+                    <div class="card-body">
+                        <div id="currentImg" class="sponsorPrice">1234/token</div>
+                        <h3><span id="currentText" class="sponsorPrice">1234/token</span></h3>
+                        <p><span id="currentLinkText" class="sponsorPrice">1234/token</span></p>
+                        <span id="currentLink" class="btn btn-block btn-primary">1234/token</span>
+                        <hr />
+                        <p>
+                            <b>Owner <span id="owner"></span></b>
+                            <i><span id="time" class="sponsorPrice"></span><span id="purchasePrice" class="sponsorPrice"></span></i>
+                        </p>
+                    </div>
+                </div>
+                
+            <button id="sample" class="btn btn-block btn-info">See example</button>
+            <div class="row sponsor">
+                <h2>Sample Broadcast (Fill out fields above and press button to see what your broadcast will look like):</h2>
+                <div id="sampleAd" class="current"></div>
+            </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card border-primary">
+                    <div class="card-header bg-default text-white">How To</div>
+                    <div class="card-body">
+                        <p>There are 2 simple steps to broadcasting on the Commonwealth network.</p>
+                        <ul>
+                            <li>1. Make sure you have an <a target="_blank" href="https://forum.saturn.network/t/how-to-install-saturn-wallet-create-a-new-account/1302">ETC wallet</a> with ETC in it.</li>
+                            <li>2. Fill out the fields below "Buy It!" and click "Purchase" when ready.</li>
+                        </ul>
+                        <h3>Rules: </h3>
+                        <ul>
+                            <li>Length of Text AND Link Text less than 140 characters. Img link 30 x 30.</li>
+                            <li>Your image link should link to the actual image, make sure URL ends with .jpeg , .jpg , .gif , .svg, or .png</li>
+                            <li>Broadcast is stored permanently on the blockchain and can be read by any Ethereum Classic node! Also hosted on our <a target="_blank" href="https://api.p3c.io/sponsor/">server</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card border-primary">
+                    <div class="card-header bg-default text-white">Buy Now</div>
+                    <div class="card-body">
+                        <form class="ui form">
+                            <label>Img URL (30x30) - Optional:</label>
+                            <input type="text" id="imgLink" placeholder="https://i.imgur.com/7iEyv4Q.png">
+
+                            <label>Text</label>
+                            <input type="text" id="text" placeholder="New ICO incoming!">
+
+                            <label>Link Text</label>
+                            <input type="text" id="hyperlinkText" placeholder="Click Here.">
+
+                            <label>Link (include http/https):</label>
+                            <input type="text" id="hyperlink" placeholder="https://company.com">
+                        </form>
+                        <button id="purchase" class="btn btn-block btn-success">Purchase for <div id="price">price</div></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row jumbotron sponsor">
+            <div class="container">
+                <h2>Current Broadcast:</h2>
+                <div id="current" class="current"></div>
+            </div>			
+        </div>
+    </div>
+    
+    <div class="modal" id="sponsorPurchaseModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Transfer Points</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <b>Pure Address:</b> <span id="myCropAddress" class="approx"></span>
+                        <button id="copyAddressButton" class="btn btn-block btn-warning" data-clipboard-text=""><i class="copy icon"></i> Copy Address</button><br />
+                        <input type="text" id="transferAddress" class="form-control" placeholder="Destination Address"><br />
+                        <input type="text" id="transferTokenCount" class="form-control" placeholder="Amount of Points"><br />
+                        <button id="transfer" class="btn btn-block btn-info"><i class="right arrow icon"></i> Transfer</button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="modal" id="sponsorDetailsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Transfer Points</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <b>Pure Address:</b> <span id="myCropAddress" class="approx"></span>
+                        <button id="copyAddressButton" class="btn btn-block btn-warning" data-clipboard-text=""><i class="copy icon"></i> Copy Address</button><br />
+                        <input type="text" id="transferAddress" class="form-control" placeholder="Destination Address"><br />
+                        <input type="text" id="transferTokenCount" class="form-control" placeholder="Amount of Points"><br />
+                        <button id="transfer" class="btn btn-block btn-info"><i class="right arrow icon"></i> Transfer</button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+
+    <script src="assets/lib/contracts.js"></script>
+    <script src="assets/lib/sponsor.js"></script>
+
+</body>
+
+</html>

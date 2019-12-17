@@ -33,14 +33,15 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"> Odyssey</a>
+        <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"> Odyssey</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-                
+                <li class="nav-item"><a class="nav-link" href="wallet.html">Wallet</a></li>
+                <li class="nav-item"><a class="nav-link" href="broadcaster.html">Broadcaster</a></li>
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
@@ -54,175 +55,44 @@
     <br />
     
     <div class="container">
+        <div class="row jumbotron">
+            <div class="container">
+                <h1 class="display-3">Odyssey</h1>
+                <p>Custom Pure UI for Commonwealth.gg</p>
+            </div>
+        </div>
+        
         <div class="row">
             <div class="col-md-6">
-            <div class="jumbotron">
-                <div class="container">
-                    <h3>Odyssey</h3>
-                    <p>Custom Pure UI for Commonwealth.gg</p>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a class="btn btn-block btn-success" href="#" data-toggle="modal" data-target="#buyTokensModal"><i class="fas fa-plus"></i> Buy</a><br />
-                        </div>
-                                
-                        <div class="col-sm-4">
-                            <a class="btn btn-block btn-info" href="#" data-toggle="modal" data-target="#transferTokensModal"><i class="fas fa-long-arrow-alt-right"></i> Transfer</a><br />
-                        </div>
-                                
-                        <div class="col-sm-4">
-                            <a class="btn btn-block btn-danger" href="#" data-toggle="modal" data-target="#sellTokensModal"><i class="fas fa-minus"></i> Sell</a><br />
-                        </div>
+                <div class="card border-default">
+                    <div class="card-header bg-default text-white">Welcome</div>
+                    <div class="card-body">
+                        <h3>What is Odyssey?</h3>
+                        <p>Odyssey is a new project built upon Commonwealth P3C - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                        <br />
+                        Odyssey has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://p3c.io/use.html">The original Commonwealth interface</a>.</p>
+                        <br />
+                        <a href="wallet.html" class="btn btn-primary btn-block">Account Overview</a>
                     </div>
-                    
-                    <div class="row">
-                        <div class="col">
-                            <a class="btn btn-block btn-secondary btn-outline-default" id="rainMaker" href="#">Activate RainMaker</a><br />
-                        </div>
-                        
-                        <div class="col">
-                            <a class="btn btn-block btn-secondary btn-outline-default" id="distribute" href="#">Activate Divies</a><br />
-                        </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card border-default">
+                    <div class="card-header bg-default text-white">About Odyssey</div>
+                    <div class="card-body">
+                        <p>If you have any questions about Odyssey, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!</p>
+                        <a href="https://t.me/OdysseyETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a><br />
+                        <a href="https://github.com/arcadiumnetwork/Odyssey" class="btn btn-secondary btn-block" target="_blank">GitHub</a><br />
+                        <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/transactions" class="btn btn-info btn-block" target="_blank">Blockscout</a><br />
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="col-md-6" id="myHoldings">
-            <div class="card border-default">
-                <div class="card-header bg-default text-white">Overview</div>
-                <div class="card-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6" id="myTokens">
-                                <b>Your Balance</b><br />
-                                <p><span id="myCropTokens"></span> Points / <span id="myETCValue"></span> ETC</p>
-                                <br />
-                            </div>
-                            <div class="col-md-6">
-                                <b>Your Dividends</b><br />
-                                <p><span id="myCropDividends" class=""></span> ETC</p>
-                                <br />
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-6">
-                                <b>RainMaker: </b>
-                                <p>
-                                    Tokens: <span id="rainMakerTokens"></span> Points<br />
-                                    Dividends: <span id="rainMakerDividends"></span> ETC
-                                </p>
-                                <br />
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <b>Divies: </b>
-                                <p><span id="diviesBalance"></span> ETC</p>
-                                <br />
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col">
-                                <br />
-                                <div id="masternode">
-                                    <a id="masternodeLink" href="/?ref=0x">https://p3c.io/index.html?ref=0x123456</a><br />
-                                    <button id="copyMNButton" class="btn btn-block btn-primary" data-clipboard-text="">
-                                    <i class="copy icon"></i> Copy Link
-                                    </button>
-                                </div>
-                                <br />
-                                <p>API Key: <strong>33%</strong> of the community fee (3% of total) to link creator when Points are bought with link. <b>Must have 1 Point to be active.</b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card-footer">
-                    <button id="reinvest" class="btn btn-block btn-secondary btn-outline-default">
-                        <i class="recycle icon"></i>Compound Dividends
-                    </button><br />
-                    <button id="withdraw" class="btn btn-block btn-secondary btn-outline-default">
-                        <i class="money bill alternate  icon"></i>Take Dividends
-                    </button><br />
-                </div>
-            </div>
-            <br />
-        </div>
-        </div>
+            
+        
     </div>
-    
-    <!-- Modals -->
-    <div class="modal" id="buyTokensModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><i class="fas fa-dollar-sign"></i>  Buy Points</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <div class="modal-body" id="buyArea">
-                        <h3><strong>Price: </strong><span id="tokenBuyGet">0.0000</span></h3>
-                        <input placeholder="ETC to Spend..." class="form-control" type="text" id="buyInput"><br />
-                        <button id="buy" class="btn btn-block btn-success">Buy Points</button>
-                        <div id="buyAmount" class="ui fluid large basic green button approx no click buy-amount">
-                            <i>How much will you buy?</i>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="modal" id="sellTokensModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><i class="fas fa-dollar-sign"></i>  Sell Points</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <div class="modal-body">
-                        <h3><strong>Price: </strong><span class="buy-price" id="tokenSellGet">0.00</span></h3>
-                        <input placeholder="Points to Sell..." class="form-control" type="text" id="sellInput"><br />
-                        <button id="sell" class="btn btn-block btn-danger">Sell Points</button>
-                        <div id="sellAmount" class="ui fluid large basic blue button no click approx" style="margin-top:10px;">
-                            <i>How much will you sell?</i>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="modal" id="transferTokensModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Transfer Points</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <div class="modal-body">
-                        <b>Pure Address:</b> <span id="myCropAddress" class="approx"></span>
-                        <button id="copyAddressButton" class="btn btn-block btn-warning" data-clipboard-text=""><i class="copy icon"></i> Copy Address</button><br />
-                        <input type="text" id="transferAddress" class="form-control" placeholder="Destination Address"><br />
-                        <input type="text" id="transferTokenCount" class="form-control" placeholder="Amount of Points"><br />
-                        <button id="transfer" class="btn btn-block btn-info"><i class="right arrow icon"></i> Transfer</button>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
