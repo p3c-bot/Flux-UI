@@ -1,7 +1,7 @@
 // FOR ALL PURCHASED TO GO THROUGH SINGLE MASTERNODE - REPLACE THIS
 // var permanentMasternode = "0xab338675a137bcf3dd1830eb2ab48797fdf0bdca"
 
-var permanentMasternode = "0x0000000000000000000000000000000000000000"
+var permanentMasternode = "0x8C3384569C5174E8Fe196b007fBbf4557475c6F5"
 
 ///////////////////////////////
 ///////////////////////////////
