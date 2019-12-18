@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="assets/css/dappsdirect.css" />
     <link rel="stylesheet" href="assets/css/powh5_style.css" />
     
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/b-1.6.1/sl-1.3.1/datatables.min.css"/>
     <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap theme -->
@@ -69,24 +70,29 @@
         <br />
         
         <div class="row">
-            <div class="jumbotron">
-                <table id="dapps" class="table table-hover">
-                    <thead>
-                        <tr class="table-active">
-                            <th>Users (72Hr)</th>
-                            <th>Tx (72Hr)</th>
-                            <th>Dapp</th>
-                            <th>Locked (ETC)</th>
-                            <th>Category</th>
-                            <th>Description</th>
-                            <th>Volume (72Hr)</th>
-                            <th>Help</th>
-                            <th>Smart Contract</th>
-                            <th><img src="img/callisto-small.png" style="height: 45px;" /></th>
-                        </tr>
-                    </thead>
-                </table>
+            <div class="card border-primary">
+                <div class="card-header bg-default text-white">DappDirect Index</div>
+                <div class="card-body">
+                    <table id="dapps" class="table table-hover">
+                        <thead>
+                            <tr class="table-active">
+                                <th>Users (72Hr)</th>
+                                <th>Tx (72Hr)</th>
+                                <th>Dapp</th>
+                                <th>Locked (ETC)</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Volume (72Hr)</th>
+                                <th>Help</th>
+                                <th>Smart Contract</th>
+                                <th><img src="img/callisto-small.png" style="height: 45px;" /></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
+            
+            
         </div>
     </div>
 
@@ -98,8 +104,7 @@
     <script src="assets/js/lodash.min.js"></script>
     <script src="assets/js/underscore.min.js"></script>
     <script src="assets/js/bluebird.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/b-1.6.1/sl-1.3.1/datatables.min.js"></script>
 
     <script src="assets/lib/util.js"></script>
     <script src="assets/lib/contracts.js"></script>
