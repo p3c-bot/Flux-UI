@@ -38,7 +38,7 @@ function changeStatus(currentStatus){
 }
 
 
-$.getJSON("https://odysseydapps.github.io/assets/lib/dapps.json", function (json) {
+$.getJSON("https://odysseydapps.github.io/Odyssey/assets/lib/dapps.json", function (json) {
   dapps = json;
   $.getJSON("https://api.p3c.io/dappdirect/etc/balance", function (balance) {
     $.getJSON("https://api.p3c.io/dappdirect/etc/digest", function (json) {
