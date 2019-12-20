@@ -29,7 +29,7 @@ function changeStatus(currentStatus){
     if (currentStatus == 'RED'){$('#status').addClass('red')}
 }
 
-$.getJSON("https://arcadiumnetwork.github.io/Flux_UI/assets/lib/dapps.json", function (json) {
+$.getJSON("https://arcadiumnetwork.github.io/Flux-UI/assets/lib/dapps.json", function (json) {
     dapps = json;
     $.getJSON("https://api.p3c.io/dappdirect/etc/balance", function (balance) {
         $.getJSON("https://api.p3c.io/dappdirect/etc/digest", function (json) {
