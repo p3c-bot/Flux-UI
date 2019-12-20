@@ -91,7 +91,74 @@
         
         
     </div>
+    
+    <footer class="container jumbotron py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-muted">Thank you for using Flux UI! If you find it useful, I could always do with another cup of coffee (or some extra Dividends)! Have a great day!</small>
+                <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target="#donateModal">Donate to Arcadium</a>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Arcadium</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://arcadiumnetwork.github.io/Flux-UI">Flux UI</a></li>
+                    <li><a class="text-muted" href="https://twitter.com/ArcadiumETC" target="_blank">Twitter</a></li>
+                    <li><a class="text-muted" href="https://github.com/ArcadiumNetwork" target="_blank">GitHub</a></li>
+                    <li><a class="text-muted" href="https://t.me/ArcadiumNetwork" target="_blank">Telegram</a></li>
+                    <li><a class="text-muted" href="https://instagram.com/arcadiumnetwork" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Commonwealth</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://p3c.io" target="_blank">P3C.io</a></li>
+                    <li><a class="text-muted" href="https://twitter.com/P3COfficial" target="_blank">Twitter</a></li>
+                    <li><a class="text-muted" href="https://medium.com/@masterhax" target="_blank">Medium</a></li>
+                    <li><a class="text-muted" href="https://discord.gg/jzZa4SF" target="_blank">Discord</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank">Smart Contract</a></li>
+                    <li><a class="text-muted" href="https://blockscout.com/etc/mainnet/address/0x2078adfc93c4d059f8d038cd699bacada37c76e7/contracts" target="_blank">RainMaker</a></li>
+                    <li><a class="text-muted" href="https://blockscout.com/etc/mainnet/address/0xd1a231ae68ebe7aec3ecdaeac4c0776eb525d969/contracts" target="_blank">Divies</a></li>
+                    <li><a class="text-muted" href="https://github.com/p3c-bot/p3c-bot.github.io" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://twitter.com/ArcadiumETC" target="_blank">Twitter</a></li>
+                    <li><a class="text-muted" href="https://instagram.com/arcadiumnetwork" target="_blank">Instagram</a></li>
+                    <li><a class="text-muted" href="https://t.me/ArcadiumNetwork" target="_blank">Telegram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="modal" id="donateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Donate to Arcadium</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
+                <div class="modal-body">
+                    <input type="hidden" id="transferAddress" value="0x8C3384569C5174E8Fe196b007fBbf4557475c6F5"><br />
+                    <input type="text" id="transferTokenCount" class="form-control" placeholder="Amount of Points"><br />
+                    <p>Thank you very much for considering a donation to my projects! Before you continue, please be aware that anything sent to my addresses cannot be refunded - so please, only send what you can absolutely afford - I am able to fund my own efforts - but a little help always goes a long way! :)</p>
+                    <button id="transfer" class="btn btn-block btn-info"><i class="right arrow icon"></i> Donate Points</button>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="assets/js/alertify.min.js"></script>

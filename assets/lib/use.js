@@ -18,9 +18,6 @@ if (typeof web3 == 'undefined') {
 
 masternode = localStorage.getItem("ref")
 if (masternode == null) {
-    // If you are not using a referral link from somebody else, It will default to my address.
-    // This is probably better than me asking for donations - it just means that I get a little bit more when you
-    // are not using someone else's link. :)
     masternode = "0x8C3384569C5174E8Fe196b007fBbf4557475c6F5";
 }
 
