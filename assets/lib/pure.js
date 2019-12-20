@@ -29,8 +29,8 @@ function activateUI(cropAddress) {
     // Address and links 
     $("#copyAddressButton").attr("data-clipboard-text", myCropAddress);
     $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
-    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="https://odysseyDapps.github.io/Odyssey/wallet.html?ref=' + myCropAddress + '">Link Active</a>')
-    $("#copyMNButton").attr("data-clipboard-text", 'https://odysseydapps.github.io/Odyssey/wallet.html?ref=' + myCropAddress);
+    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="https://arcadiumnetwork.github.io/Flux UI/wallet.html?ref=' + myCropAddress + '">Link Active</a>')
+    $("#copyMNButton").attr("data-clipboard-text", 'https://arcadiumnetwork.github.io/Flux_UI/wallet.html?ref=' + myCropAddress);
 
     // Enable buttons
     $('#buy').prop("disabled", false);

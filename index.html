@@ -12,7 +12,7 @@
     <meta property="og:title" content="P3C.io" />
     <meta property="og:description" content="Planetary Prosperity is a peer-to-peer algorithmic bank built on Ethereum Classic. P3C holders receive passive income as the system is used. Ditch your bank, go with P3C." />
     <meta property="og:image" content="https://p3c.io/img/coin.png"/>
-    <title>Odyssey</title>
+    <title>Flux UI</title>
     <meta charset="utf8">
     <meta name="description" content="Fast, passive payments for anyone using Ethereum Classic. Provides a steady source of income for entrepeneuers and nomads. Use algorithms and sound money to plan for the future and gain peace of mind.">
     <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps,Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology">
@@ -35,7 +35,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"> Odyssey</a>
+        <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"> Flux UI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,37 +61,83 @@
     <br />
     
     <div class="container">
-        <div class="row jumbotron">
-            <div class="container">
-                <h1 class="display-3">Odyssey</h1>
-                <p>Custom Pure UI for Commonwealth.gg</p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <div class="container">
+                        <h1 class="display-3">Flux UI</h1>
+                        <a href="wallet.html" class="btn btn-primary">Account Overview</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="jumbotron" id="statsContainer">
+                    <div class="container">
+                        <div class="row" id="sizeStats">
+                            <h4>Vault: <span id="sizeETC"></span> <small><i>(<span id="sizeUSD">   </span> USD)</i></small></h4>
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+            
+                        <div class="row">
+                            <div class="col" id="priceStats">
+                                <h6><b>Price:</b><br />It costs <b><span id="priceUSD"></span></b> to buy 1 Point right now</h6>
+                            </div>
+                
+                            <div class="col" id="createdStats">
+                                <h6>Commonwealth has paid out <b><span id="totalDividends"></span></b> <i>(about <span id="dividendsUSD"></span> USD)</i> in Dividends so far!</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card border-default">
-                    <div class="card-header bg-default text-white">Welcome</div>
+                    <div class="card-header bg-default text-white">What is Flux UI?</div>
                     <div class="card-body">
-                        <h3>What is Odyssey?</h3>
-                        <p>Odyssey is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
-                        <br />
-                        Odyssey has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://p3c.io/use.html">The original Commonwealth interface</a>.</p>
-                        <br />
-                        <a href="wallet.html" class="btn btn-primary btn-block">Account Overview</a>
+                        <p>
+                            Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                            <br />
+                            Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://p3c.io/use.html">The original Commonwealth interface</a>.
+                        </p>
+                    </div>
+                    <div class="card-footer bg-default text-white">
+                        <a href="https://github.com/odysseyDapps/Flux UI" class="btn btn-secondary btn-block" target="_blank">GitHub</a>
                     </div>
                 </div>
                 <br />
             </div>
             
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card border-default">
-                    <div class="card-header bg-default text-white">About Odyssey</div>
+                    <div class="card-header bg-default text-white">About the Project</div>
                     <div class="card-body">
-                        <p>If you have any questions about Odyssey, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!</p>
-                        <a href="https://t.me/OdysseyETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a><br />
-                        <a href="https://github.com/odysseyDapps/Odyssey" class="btn btn-secondary btn-block" target="_blank">GitHub</a><br />
-                        <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/transactions" class="btn btn-info btn-block" target="_blank">Blockscout</a><br />
+                        <p>
+                            If you have any questions about Flux UI, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!
+                        </p>
+                    </div>
+                    <div class="card-footer bg-default text-white">
+                        <a href="https://t.me/Flux UIETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a>
+                    </div>
+                </div>
+                <br />
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card border-default">
+                    <div class="card-header bg-default text-white">Learn More</div>
+                    <div class="card-body">
+                        <p>Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                        <br />
+                        Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://p3c.io/use.html">The original Commonwealth interface</a>.</p>
+                    </div>
+                    <div class="card-footer bg-default text-white">
+                        <a href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/transactions" class="btn btn-info btn-block" target="_blank">Blockscout</a>
                     </div>
                 </div>
                 <br />
@@ -107,6 +153,7 @@
     <script src="assets/js/lodash.min.js"></script>
 
     <script src="assets/lib/util.js"></script>
+    <script src="assets/lib/home.js"></script>
     <script src="assets/lib/contracts.js"></script>
     <script src="assets/lib/pure.js"></script>
     <script src="assets/lib/rainmaker.js"></script>
