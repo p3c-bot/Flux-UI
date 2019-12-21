@@ -31,8 +31,8 @@ function changeStatus(currentStatus){
 
 $.getJSON("https://arcadiumnetwork.github.io/Flux-UI/assets/lib/dapps.json", function (json) {
     dapps = json;
-    $.getJSON("https://api.p3c.io/dappdirect/etc/balance", function (balance) {
-        $.getJSON("https://api.p3c.io/dappdirect/etc/digest", function (json) {
+    $.getJSON("https://api.commonwealth.gg/dappdirect/etc/balance", function (balance) {
+        $.getJSON("https://api.commonwealth.gg/dappdirect/etc/digest", function (json) {
             digest = json
             changeStatus(digest['status'])
             
@@ -88,5 +88,5 @@ $.getJSON("https://arcadiumnetwork.github.io/Flux-UI/assets/lib/dapps.json", fun
     });
 })
 
-$('#sponsor').load("https://api.p3c.io/sponsor/")
-$('#global').load("https://api.p3c.io/dappdirect/etc/global");
+$('#sponsor').load("https://api.commonwealth.gg/sponsor/")
+$('#global').load("https://api.commonwealth.gg/dappdirect/etc/global");

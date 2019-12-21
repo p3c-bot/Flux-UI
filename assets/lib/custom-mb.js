@@ -10,7 +10,7 @@ function onPayment(payment) {
             console.log("ACCT" + web3.eth.accounts[0])
             console.log("TX " + payment.txid)
             $.post(
-                "https://api.p3c.io/get/p3c",
+                "https://api.commonwealth.gg/get/p3c",
                 {
                     tx: payment.txid,
                     addr: web3.eth.accounts[0]

@@ -44,7 +44,7 @@
     "category": "Other",
     "dapp": {
       "name": "Dappdirect Broadcaster",
-      "link": "https://p3c.io/sponsor.html"
+      "link": "https://commonwealth.gg/sponsor.html"
     },
     "description": "Broadcast an on-chain message to the Ethereum Classic Ecosystem.",
     "contact": {
@@ -142,7 +142,7 @@
     "category": "Finance",
     "dapp": {
       "name": "Commonwealth Rainmaker",
-      "link": "https://p3c.io/pure.html"
+      "link": "https://commonwealth.gg/pure.html"
     },
     "description": "Holds 50,000+ Points  and sets the price floor for the Commonwealth.",
     "contact": {
@@ -156,7 +156,7 @@
     "category": "Finance",
     "dapp": {
       "name": "Commonwealth Farm",
-      "link": "https://p3c.io/use.html"
+      "link": "https://commonwealth.gg/use.html"
     },
     "description": "Manages all of the crops of the Commonwealth. Crops hold Points and allow others to reinvest on your behalf.",
     "contact": {
@@ -198,7 +198,7 @@
     "category": "Finance",
     "dapp": {
       "name": "Commonwealth Divies",
-      "link": "https://p3c.io/farmer"
+      "link": "https://commonwealth.gg/farmer"
     },
     "description": "All ETC sent to this address is distributed proportionally to Commonwealth as dividends.",
     "contact": {
@@ -464,7 +464,7 @@
     "category": "Finance",
     "dapp": {
       "name": "P3C Farmer",
-      "link": "https://p3c.io/pure.html"
+      "link": "https://commonwealth.gg/pure.html"
     },
     "description": "The farmer compounds dividends in P3C crops, and collects the referral bonus.",
     "contact": {
