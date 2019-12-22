@@ -42,10 +42,13 @@
 
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="wallet.html">Wallet</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a></li>
                 <li class="nav-item"><a class="nav-link" href="broadcaster.html">Broadcaster</a></li>
                 <li class="nav-item"><a class="nav-link" href="tv.html">TV</a></li>
                 <li class="nav-item"><a class="nav-link" href="dapps.html">Dapps</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#faqsModal">FAQs</a></li>
             </ul>
             
             <ul class="navbar-nav ml-auto">
@@ -53,7 +56,7 @@
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-secondary btn-block my-2 my-sm-0" type="submit"><i class="chess rook icon"></i> <span id="etcInContract">0</span></button>
+                <button class="btn btn-secondary btn-block my-2 my-sm-0" type="submit"><i class="chess rook icon"></i> <span id="etcInContract">0</span> (<span id="sizeUSD">   </span> USD)</button>
             </form>
         </div>
     </nav>
@@ -69,83 +72,101 @@
             <div class="col-md-6">
                 <div class="jumbotron">
                     <div class="container">
-                        <h1 class="display-3">Flux UI</h1>
-                        <a href="wallet.html" class="btn btn-primary">Account Overview</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="jumbotron" id="statsContainer">
-                    <div class="container">
-                        <div class="row" id="sizeStats">
-                            <h4>Vault: <span id="sizeETC"></span> <small><i>(<span id="sizeUSD">   </span> USD)</i></small></h4>
-                            <br />
-                            <br />
-                            <br />
-                        </div>
-            
-                        <div class="row">
-                            <div class="col" id="priceStats">
+                        <h3>Balance: <span class="badge badge-pill badge-success"><span id="myCropTokens"></span> Points</span></h3>
+                        <h5>
+                            <span class="badge badge-pill badge-secondary">Value: <span id="myETCValue" class=""></span> ETC</span><br />
+                            <span class="badge badge-pill badge-secondary">Dividends: <span id="myCropDividends" class=""></span> ETC</span>
+                        </h5>
+                        
+                        <div id="priceStats">
+                            <div class="col">
                                 <h6><b>Price:</b><br />It costs <b><span id="priceUSD"></span></b> to buy 1 Point right now</h6>
                             </div>
+                        </div>
                 
-                            <div class="col" id="createdStats">
-                                <h6>Commonwealth has paid out <b><span id="totalDividends"></span></b> <i>(about <span id="dividendsUSD"></span> USD)</i> in Dividends so far!</h6>
-                            </div>
+                        <div id="createdStats">
+                            <h6>Commonwealth has paid out <b><span id="totalDividends"></span></b> <i>(about <span id="dividendsUSD"></span> USD)</i> in Dividends so far!</h6>
                         </div>
                     </div>
                 </div>
+                <br />
             </div>
-        </div>
         
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card border-default">
-                    <div class="card-header bg-default text-white">What is Flux UI?</div>
+            <div class="col-md-6" id="myHoldings">
+                <div class="card border-success">
+                    <div class="card-header bg-default text-white">Overview</div>
                     <div class="card-body">
-                        <p>
-                            Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>RainMaker</h6>
+                                    <h5>
+                                        <span class="badge badge-pill badge-secondary">
+                                            <span id="rainMakerTokens"></span> Points (<span id="rainMakerDividends"></span> ETC)
+                                        </span>
+                                        <br />
+                                    </h5>
+                                    <br />
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <h6>Divies</h6>
+                                    <h5><span class="badge badge-pill badge-success"><span id="diviesBalance"></span> ETC</span></h5>
+                                    <br />
+                                </div>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col">
+                                    <br />
+                                    <div id="masternode">
+                                        <a id="masternodeLink" href="https://flux.arcadium.network/index.html?ref=0x">https://flux.arcadium.network/index.html?ref=0x123456</a><br />
+                                        <button id="copyMNButton" class="btn btn-block btn-primary" data-clipboard-text="">
+                                            <i class="copy icon"></i> Copy Link
+                                        </button>
+                                    </div>
+                                    <br />
+                                    <p>API Key: <strong>33%</strong> of the community fee (3% of total) to link creator when Points are bought with link. <b>Must have 1 Point to be active.</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col">
+                            <button id="reinvest" class="btn btn-block btn-secondary btn-outline-default">
+                                <i class="recycle icon"></i>Compound Dividends
+                            </button><br />
+                        </div>
+                        
+                        <div class="col">
+                            <button id="withdraw" class="btn btn-block btn-secondary btn-outline-default">
+                                <i class="money bill alternate icon"></i>Take Dividends
+                            </button><br />
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col text-center">
+                            <a class="btn btn-block btn-secondary btn-outline-default" id="rainMaker" href="#">
+                                Activate RainMaker
+                            </a>
+                            <small><a href="https://medium.com/@masterhax/what-is-the-rainmaker-contract-bb0a77bc3b91" target="_blank">Learn about RainMaker</a></small>
                             <br />
-                            Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://commonwealth.gg/use.html">The original Commonwealth interface</a>.
-                        </p>
-                    </div>
-                    <div class="card-footer bg-default text-white">
-                        <a href="https://github.com/arcadiumnetwork/Flux-UI" class="btn btn-secondary btn-block" target="_blank">GitHub</a>
-                    </div>
+                            
+                        </div>
+                        
+                        <div class="col">
+                            <a class="btn btn-block btn-secondary btn-outline-default" id="distribute" href="#">
+                                Activate Divies
+                            </a><br />
+                        </div>
+                    </div>  
                 </div>
-                <br />
             </div>
-            
-            <div class="col-md-4">
-                <div class="card border-default">
-                    <div class="card-header bg-default text-white">About the Project</div>
-                    <div class="card-body">
-                        <p>
-                            If you have any questions about Flux UI, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!
-                        </p>
-                    </div>
-                    <div class="card-footer bg-default text-white">
-                        <a href="https://t.me/Flux UIETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a>
-                    </div>
-                </div>
-                <br />
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card border-default">
-                    <div class="card-header bg-default text-white">Learn More</div>
-                    <div class="card-body">
-                        <p>Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
-                        <br />
-                        Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://commonwealth.gg/use.html">The original Commonwealth interface</a>.</p>
-                    </div>
-                    <div class="card-footer bg-default text-white">
-                        <a href="https://commonwealth.gg" class="btn btn-info btn-block" target="_blank">Commonwealth</a>
-                    </div>
-                </div>
-                <br />
-            </div>
+            <br />
+        </div>
         </div>
     </div>
     
@@ -225,6 +246,133 @@
                         
                     </div>
                     <p>Thank you very much for considering a donation to Arcadium! Before you continue, please be aware that anything sent to Arcadium addresses cannot be refunded - so please, only send what you can absolutely afford. Donations received by Arcadium will be used to fund future development efforts and new projects. Donations of ETC to Divies will help the entire Commonwealth.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modals -->
+    <div class="modal" id="buyTokensModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-dollar-sign"></i>  Buy Points</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body" id="buyArea">
+                        <h3><strong>Price: </strong><span id="tokenBuyGet">0.0000</span></h3>
+                        <input placeholder="ETC to Spend..." class="form-control" type="text" id="buyInput"><br />
+                        <button id="buy" class="btn btn-block btn-success">Buy Points</button>
+                        <div id="buyAmount" class="ui fluid large basic green button approx no click buy-amount">
+                            <i>How much will you buy?</i>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="sellTokensModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-dollar-sign"></i>  Sell Points</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <h3><strong>Price: </strong><span class="buy-price" id="tokenSellGet">0.00</span></h3>
+                        <input placeholder="Points to Sell..." class="form-control" type="text" id="sellInput"><br />
+                        <button id="sell" class="btn btn-block btn-danger">Sell Points</button>
+                        <div id="sellAmount" class="ui fluid large basic blue button no click approx" style="margin-top:10px;">
+                            <i>How much will you sell?</i>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="transferTokensModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Transfer Points</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <b>Pure Address:</b> <span id="myCropAddress" class="approx"></span>
+                        <button id="copyAddressButton" class="btn btn-block btn-warning" data-clipboard-text=""><i class="copy icon"></i> Copy Address</button><br />
+                        <input type="text" id="transferAddress" class="form-control" placeholder="Destination Address"><br />
+                        <input type="text" id="transferTokenCount" class="form-control" placeholder="Amount of Points"><br />
+                        <button id="transfer" class="btn btn-block btn-info"><i class="right arrow icon"></i> Transfer</button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="modal" id="faqsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  FAQs</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <h3>What is Flux UI?</h3>
+                            <p>
+                                Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                                <br />
+                                Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://commonwealth.gg/use.html">The original Commonwealth interface</a>.
+                            </p>
+                            <a href="https://github.com/arcadiumnetwork/Flux-UI" class="btn btn-secondary btn-block" target="_blank">GitHub</a><br />
+                            <hr />
+                            <br />
+                        </div>
+                        <br />
+                        
+                        <div class="row">
+                            <h3>About the Project</h3>
+                            <p>
+                                If you have any questions about Flux UI, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!
+                            </p>
+                            <a href="https://t.me/Flux UIETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a><br />
+                            <hr />
+                            <br />
+                        </div>
+                        <br />
+                        
+                        <div class="row">
+                            <h3>Learn More</h3>
+                            <p>
+                                Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                                <br />
+                                Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://commonwealth.gg/use.html">The original Commonwealth interface</a>.
+                            </p>
+                            <a href="https://commonwealth.gg" class="btn btn-info btn-block" target="_blank">Commonwealth</a>
+                        </div>
+                        <br />
+                        
+                    </div>
                 </div>
 
                 <div class="modal-footer">
