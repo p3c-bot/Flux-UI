@@ -43,9 +43,7 @@
 
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a></li>
+                
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Broadcasts <span class="caret"></span>
@@ -89,6 +87,19 @@
                             <span class="badge badge-pill badge-secondary">Value: <span id="myETCValue" class=""></span> ETC</span><br />
                             <span class="badge badge-pill badge-secondary">Dividends: <span id="myCropDividends" class=""></span> ETC</span>
                         </h5>
+                        <div class="row">
+                            <div class="col">
+                                <a class="btn btn-block btn-success" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a>
+                            </div>
+                            
+                            <div class="col">
+                                <a class="btn btn-block btn-danger" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a>
+                            </div>
+                            
+                            <div class="col">
+                                <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a>
+                            </div>
+                        </div>
                         <br />
                         <div id="current"></div>
                     </div>
