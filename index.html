@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/alertify.min.css" />
     <!-- Default theme -->
     <link rel="stylesheet" href="assets/css/themes/default.min.css" />
+    <link rel="stylesheet" href="assets/css/farmer.css" />
     <link rel="stylesheet" href="assets/css/powh5_style.css" />
     
     <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
@@ -45,9 +46,20 @@
                 <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a></li>
-                <li class="nav-item"><a class="nav-link" href="broadcaster.html">Broadcaster</a></li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Broadcasts <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorPurchaseModal">Buy Broadcast</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorInstructorModal">Broadcast Help</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorDetailsModal" target="_blank">Current Broadcast</a>
+                    </div>
+                </li>
                 <li class="nav-item"><a class="nav-link" href="tv.html">TV</a></li>
                 <li class="nav-item"><a class="nav-link" href="dapps.html">Dapps</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#statsModal">Stats</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#faqsModal">FAQs</a></li>
             </ul>
             
@@ -77,16 +89,8 @@
                             <span class="badge badge-pill badge-secondary">Value: <span id="myETCValue" class=""></span> ETC</span><br />
                             <span class="badge badge-pill badge-secondary">Dividends: <span id="myCropDividends" class=""></span> ETC</span>
                         </h5>
-                        
-                        <div id="priceStats">
-                            <div class="col">
-                                <h6><b>Price:</b><br />It costs <b><span id="priceUSD"></span></b> to buy 1 Point right now</h6>
-                            </div>
-                        </div>
-                
-                        <div id="createdStats">
-                            <h6>Commonwealth has paid out <b><span id="totalDividends"></span></b> <i>(about <span id="dividendsUSD"></span> USD)</i> in Dividends so far!</h6>
-                        </div>
+                        <br />
+                        <div id="current"></div>
                     </div>
                 </div>
                 <br />
@@ -266,6 +270,7 @@
 
                     <div class="modal-body" id="buyArea">
                         <h3><strong>Price: </strong><span id="tokenBuyGet">0.0000</span></h3>
+                        <small>Right now, 1 Point costs <b><span id="priceUSD"></span> USD</b>.</small>
                         <input placeholder="ETC to Spend..." class="form-control" type="text" id="buyInput"><br />
                         <button id="buy" class="btn btn-block btn-success">Buy Points</button>
                         <div id="buyAmount" class="ui fluid large basic green button approx no click buy-amount">
@@ -381,10 +386,141 @@
             </div>
         </div>
     </div>
+    
+    <div class="modal" id="statsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Commonwealth Stats</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="createdStats">
+                            <h3>Dividends Distributed: <b><span id="totalDividends"></span></b> <i>(about <span id="dividendsUSD"></span> USD)</i></h3>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Sponsor Modals -->
+    <div class="modal" id="sponsorPurchaseModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Buy Adspace</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form class="ui form">
+                        <div class="form-group">
+                            <label>Img URL (30x30) - Optional:</label>
+                            <input type="text" id="imgLink" class="form-control" placeholder="https://i.imgur.com/7iEyv4Q.png">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Text</label>
+                            <input type="text" id="text" class="form-control" placeholder="New ICO incoming!">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link Text</label>
+                            <input type="text" id="hyperlinkText" class="form-control" placeholder="Click Here.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link (include http/https):</label>
+                            <input type="text" id="hyperlink" class="form-control" placeholder="https://company.com">
+                        </div>
+                    </form>
+                    
+                    <div class="row sponsor">
+                        <p>Preview: </p>
+                        <div id="sampleAd" class="current"></div>
+                    </div>
+                    <button id="sample"   class="btn btn-block btn-info">Generate Preview</button>
+                    <button id="purchase" class="btn btn-block btn-success">Purchase for <div id="price">price</div></button>
+                    
+                    
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="sponsorInstructorModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  How to Use</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>
+                            Store your ad on-chain and show it across the Commonwealth network!<br />
+                            There are 2 simple steps to broadcasting on the Commonwealth network.
+                        </p>
+                        <ul>
+                            <li>1. Make sure you have an <a target="_blank" href="https://forum.saturn.network/t/how-to-install-saturn-wallet-create-a-new-account/1302">ETC wallet</a> with ETC in it.</li>
+                            <li>2. Fill out the fields below "Buy It!" and click "Purchase" when ready.</li>
+                        </ul>
+                        <h3>Rules: </h3>
+                        <ul>
+                            <li>Length of Text AND Link Text less than 140 characters. Img link 30 x 30.</li>
+                            <li>Your image link should link to the actual image, make sure URL ends with .jpeg , .jpg , .gif , .svg, or .png</li>
+                            <li>Broadcast is stored permanently on the blockchain and can be read by any Ethereum Classic node! Also hosted on our <a target="_blank" href="https://api.commonwealth.gg/sponsor/">server</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="modal" id="sponsorDetailsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Sponsor Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="currentImg" class="sponsorPrice">1234/token</div>
+                        <h3><span id="currentText" class="sponsorPrice">1234/token</span></h3>
+                        <p><span id="currentLinkText" class="sponsorPrice">1234/token</span></p>
+                        <span id="currentLink" class="btn btn-block btn-primary">1234/token</span>
+                        <hr />
+                        <p>
+                            <b>Owner <span id="owner"></span></b>
+                            <i><span id="time" class="sponsorPrice"></span><span id="purchasePrice" class="sponsorPrice"></span></i>
+                        </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="assets/js/alertify.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
     <script src="assets/js/web3.min.js"></script>
     <script src="assets/js/clipboard.min.js"></script>
     <script src="assets/js/lodash.min.js"></script>
@@ -395,6 +531,7 @@
     <script src="assets/lib/pure.js"></script>
     <script src="assets/lib/rainmaker.js"></script>
     <script src="assets/lib/masternode.js"></script>
+    <script src="assets/lib/sponsor.js"></script>
     <script src="assets/lib/use.js"></script>
 </body>
 </html>
