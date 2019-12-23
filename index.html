@@ -43,7 +43,6 @@
 
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-                
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Broadcasts <span class="caret"></span>
@@ -55,8 +54,6 @@
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorDetailsModal" target="_blank">Current Broadcast</a>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="tv.html">TV</a></li>
-                <li class="nav-item"><a class="nav-link" href="dapps.html">Dapps</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#statsModal">Stats</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#faqsModal">FAQs</a></li>
             </ul>
@@ -76,6 +73,10 @@
     <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
     <coingecko-coin-price-marquee-widget  coin-ids="universalcoin,ethereum-classic,saturn-classic-dao-token" currency="usd" background-color="#000000" locale="en"></coingecko-coin-price-marquee-widget>
     <br />
+    
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade show active" id="wallet">
+            <!-- Wallet Container -->
     
     <div class="container">
         <div class="row">
@@ -134,14 +135,18 @@
                             <div class="row">
                                 <div class="col">
                                     <br />
-                                    <div id="masternode">
-                                        <a id="masternodeLink" href="https://flux.arcadium.network/index.html?ref=0x">https://flux.arcadium.network/index.html?ref=0x123456</a><br />
-                                        <button id="copyMNButton" class="btn btn-block btn-primary" data-clipboard-text="">
-                                            <i class="copy icon"></i> Copy Link
-                                        </button>
+                                    <div id="masternode" class="ui segments masternode hidden">
+                                        <div class="ui secondary segment">
+                                            <div class="link masternode">
+                                                <a id="masternodeLink" href="/?ref=0x">https://flux.arcadium.network/index.html?ref=0x123456</a> <button id="copyMNButton" class="ui primary basic button copy" data-clipboard-text="">
+                                                <i class="copy icon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <br />
-                                    <p>API Key: <strong>33%</strong> of the community fee (3% of total) to link creator when Points are bought with link. <b>Must have 1 Point to be active.</b></p>
+                                    <p>API Key:
+                                        <strong>33%</strong> of the community fee (3% of total) goes to the link creator when Points are bought with their link. <b>You must have 1 Point for your link to be active.</b> <a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank">Learn more.</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -182,6 +187,13 @@
             </div>
             <br />
         </div>
+        </div>
+    </div>
+    
+    
+        </div>
+        <div class="tab-pane fade" id="games">
+            <!-- Games Container -->
         </div>
     </div>
     
@@ -457,9 +469,6 @@
                     </div>
                     <button id="sample"   class="btn btn-block btn-info">Generate Preview</button>
                     <button id="purchase" class="btn btn-block btn-success">Purchase for <div id="price">price</div></button>
-                    
-                    
-                    
                 </div>
 
                 <div class="modal-footer">
@@ -531,6 +540,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="assets/js/alertify.min.js"></script>
+    <script src="assets/js/semantic.min.js"></script>
     <script src="assets/js/moment.min.js"></script>
     <script src="assets/js/web3.min.js"></script>
     <script src="assets/js/clipboard.min.js"></script>

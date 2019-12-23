@@ -14,9 +14,9 @@ function getMyCrop() {
     setTimeout(function () {
         //checks if web3 is loaded, but not logged in on saturn
         if (web3.eth.accounts[0] === undefined) { 
-            alertify.error('Not connected to Commonwealth.')
+            alertify.error('Not connected to Commonwealth')
         } else {
-            alertify.success('Connected to Commonwealth.')
+            alertify.success('Connected to Commonwealth')
         }
     }, 1000)
     myCropAddress = web3.toChecksumAddress(web3.eth.accounts[0])
@@ -29,8 +29,8 @@ function activateUI(cropAddress) {
     // Address and links 
     $("#copyAddressButton").attr("data-clipboard-text", myCropAddress);
     $("#myCropAddress").replaceWith("<b id='myCropAddress' class='cropAddress'>" + myCropAddress + "</b>")
-    $("#masternodeLink").replaceWith('<a id="masternodeLink" href="https://arcadiumnetwork.github.io/Flux-UI/wallet.html?ref=' + myCropAddress + '">Link Active</a>')
-    $("#copyMNButton").attr("data-clipboard-text", 'https://arcadiumnetwork.github.io/Flux-UI/wallet.html?ref=' + myCropAddress);
+    $("#masternodeLink").replaceWith('<a id="masternodeLink" class="btn btn-block btn-secondary btn-outline-default" href="/?ref=' + myCropAddress + '">Masternode Active</a>')
+    $("#copyMNButton").attr("data-clipboard-text", 'https://flux.arcadium.network/index.html?ref=' + myCropAddress);
 
     // Enable buttons
     $('#buy').prop("disabled", false);
@@ -63,6 +63,10 @@ function getMyCropDividends() {
             if (change) {
                 amount = web3.fromWei(myCropDividends).toFixed(8)
                 $("#myCropDividends").replaceWith("<b id='myCropDividends'>" + amount  + "</b>")
+                $('#myCropDividends').transition({
+                    animation: 'flash',
+                    duration: '1s',
+                });
             }
         }
     });
@@ -81,6 +85,10 @@ function getMyCropTokens() {
                     myETCValue = (sellPrice * web3.fromWei(myCropTokens))
                     $('#myETCValue').text(numberWithCommas(myETCValue.toFixed(1)))
                 })
+                $('#myCropTokens').transition({
+                    animation: 'flash',
+                    duration: '1s',
+                });
             }
         }
     });
@@ -126,7 +134,7 @@ function sellFromCrop(amountToSell) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success(amountToSell + " Points Sold. Waiting for Blockchain.")
+                alertify.success(amountToSell + " Points Sold - Waiting for Blockchain")
                 console.log(result);
             } else {
                 console.log(error);
@@ -144,7 +152,7 @@ function reinvestFromCrop(referrer) {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success("Reinvested Points. Waiting for Blockchain.")
+                alertify.success("Reinvested Points - Waiting for Blockchain")
                 console.log(result);
             } else {
                 console.log(error);
@@ -160,7 +168,7 @@ function withdrawFromCrop() {
         },
         function (error, result) { //get callback from function which is your transaction key
             if (!error) {
-                alertify.success("Withdrawing dividends to your ETC wallet.")
+                alertify.success("Withdrawing dividends to your ETC wallet")
                 console.log(result);
             } else {
                 console.log(error);
