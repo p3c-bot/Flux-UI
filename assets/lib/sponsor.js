@@ -64,6 +64,6 @@ $("#sample").click(function () {
 	var hyperlinkText= $("#hyperlinkText").val();
 	var hyperlink= $("#hyperlink").val();
 
-	$( "#sampleAd" ).html('<img src="' + imgLink + '" height="30" width="30"> ' + text + ' <a target="_blank" href="' + hyperlink + '" rel="nofollow" title="Links to an External Advertiser site" target="_blank"> <b>' + hyperlinkText + '</b></a><div id="beacon_2a55ce0186" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"></div>');
+	$( "#sampleAd" ).html('<img src="' + imgLink + '" height="30" width="30" origin="anonymous"> ' + text + ' <a target="_blank" href="' + hyperlink + '" rel="nofollow" title="Links to an External Advertiser site" target="_blank"> <b>' + hyperlinkText + '</b></a>');
 
 })
