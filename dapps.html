@@ -198,6 +198,191 @@
             </div>
         </div>
     </div>
+    
+    <div class="modal" id="faqsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  FAQs</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <h3>What is Flux UI?</h3>
+                            <p>
+                                Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                                <br />
+                                Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://commonwealth.gg/use.html">The original Commonwealth interface</a>.
+                            </p>
+                            <a href="https://github.com/arcadiumnetwork/Flux-UI" class="btn btn-secondary btn-block" target="_blank">GitHub</a><br />
+                            <hr />
+                            <br />
+                        </div>
+                        <br />
+                        
+                        <div class="row">
+                            <h3>About the Project</h3>
+                            <p>
+                                If you have any questions about Flux UI, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!
+                            </p>
+                            <a href="https://t.me/Flux UIETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a><br />
+                            <hr />
+                            <br />
+                        </div>
+                        <br />
+                        
+                        <div class="row">
+                            <h3>Learn More</h3>
+                            <p>
+                                Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                                <br />
+                                Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://commonwealth.gg/use.html">The original Commonwealth interface</a>.
+                            </p>
+                            <a href="https://commonwealth.gg" class="btn btn-info btn-block" target="_blank">Commonwealth</a>
+                        </div>
+                        <br />
+                        
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="statsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Commonwealth Stats</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="createdStats">
+                            <h3>Dividends Distributed: <b><span id="totalDividends"></span></b> <i>(about <span id="dividendsUSD"></span> USD)</i></h3>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Sponsor Modals -->
+    <div class="modal" id="sponsorPurchaseModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Buy Adspace</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form class="ui form">
+                        <div class="form-group">
+                            <label>Img URL (30x30) - Optional:</label>
+                            <input type="text" id="imgLink" class="form-control" placeholder="https://i.imgur.com/7iEyv4Q.png">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Text</label>
+                            <input type="text" id="text" class="form-control" placeholder="New ICO incoming!">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link Text</label>
+                            <input type="text" id="hyperlinkText" class="form-control" placeholder="Click Here.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link (include http/https):</label>
+                            <input type="text" id="hyperlink" class="form-control" placeholder="https://company.com">
+                        </div>
+                    </form>
+                    
+                    <div class="row sponsor">
+                        <p>Preview: </p>
+                        <div id="sampleAd" class="current"></div>
+                    </div>
+                    <button id="sample"   class="btn btn-block btn-info">Generate Preview</button>
+                    <button id="purchase" class="btn btn-block btn-success">Purchase for <div id="price">price</div></button>
+                    
+                    
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="sponsorInstructorModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  How to Use</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>
+                            Store your ad on-chain and show it across the Commonwealth network!<br />
+                            There are 2 simple steps to broadcasting on the Commonwealth network.
+                        </p>
+                        <ul>
+                            <li>1. Make sure you have an <a target="_blank" href="https://forum.saturn.network/t/how-to-install-saturn-wallet-create-a-new-account/1302">ETC wallet</a> with ETC in it.</li>
+                            <li>2. Fill out the fields below "Buy It!" and click "Purchase" when ready.</li>
+                        </ul>
+                        <h3>Rules: </h3>
+                        <ul>
+                            <li>Length of Text AND Link Text less than 140 characters. Img link 30 x 30.</li>
+                            <li>Your image link should link to the actual image, make sure URL ends with .jpeg , .jpg , .gif , .svg, or .png</li>
+                            <li>Broadcast is stored permanently on the blockchain and can be read by any Ethereum Classic node! Also hosted on our <a target="_blank" href="https://api.commonwealth.gg/sponsor/">server</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="modal" id="sponsorDetailsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Sponsor Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="currentImg" class="sponsorPrice">1234/token</div>
+                        <h3><span id="currentText" class="sponsorPrice">1234/token</span></h3>
+                        <p><span id="currentLinkText" class="sponsorPrice">1234/token</span></p>
+                        <span id="currentLink" class="btn btn-block btn-primary">1234/token</span>
+                        <hr />
+                        <p>
+                            <b>Owner <span id="owner"></span></b>
+                            <i><span id="time" class="sponsorPrice"></span><span id="purchasePrice" class="sponsorPrice"></span></i>
+                        </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
