@@ -83,9 +83,8 @@ function getMyCropTokens() {
                     "<span id='myCropTokens'>" + numberWithCommas((web3.fromWei(myCropTokens)).toFixed(2)) + "</span>"
                 )
                 
-                var elem = document.getElementById("fluxLevelBar");
-                elem.value = numberForProgress +'%';
-                elem.innerHTML = numberWithCommas((web3.fromWei(myCropTokens)).toFixed(2));
+                var fluxPercentageValue = web3.fromWei(myCropTokens.toFixed(0));
+                document.getElementById("fluxLevelBar").style.width = (fluxPercentageValue/210)+"%";
                 document.getElementById("fluxLevelText").innerHTML = numberForProgress((web3.fromWei(myCropTokens)).toFixed(2));
 
                 p3cContract.sellPrice(function (e, r) {
