@@ -2,7 +2,9 @@ const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-
+const numberForProgress = (x) => {
+    return x.toString();
+}
 
 function playSound(filename) {
     var mp3Source = '<source src="' + 'doc-assets/' + filename + '.mp3" type="audio/mpeg">';

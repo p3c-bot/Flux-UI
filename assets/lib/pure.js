@@ -79,7 +79,15 @@ function getMyCropTokens() {
             change = (String(myCropTokens) !== String(result))
             myCropTokens = result;
             if (change) {
-                $("#myCropTokens").replaceWith("<b id='myCropTokens'>" + numberWithCommas((web3.fromWei(myCropTokens)).toFixed(2)) + "</b>")
+                $("#myCropTokens").replaceWith(
+                    "<span id='myCropTokens'>" + numberWithCommas((web3.fromWei(myCropTokens)).toFixed(2)) + "</span>"
+                )
+                
+                var elem = document.getElementById("fluxLevelBar");
+                elem.value = numberForProgress +'%';
+                elem.innerHTML = numberWithCommas((web3.fromWei(myCropTokens)).toFixed(2));
+                document.getElementById("fluxLevelText").innerHTML = numberForProgress((web3.fromWei(myCropTokens)).toFixed(2));
+
                 p3cContract.sellPrice(function (e, r) {
                     let sellPrice = web3.fromWei(r)
                     myETCValue = (sellPrice * web3.fromWei(myCropTokens))

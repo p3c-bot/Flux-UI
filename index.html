@@ -101,11 +101,19 @@
                                 <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a>
                             </div>
                         </div>
-                        <br />
-                        <div id="current"></div>
+                    </div>
+                </div>  
+                
+                <div class="jumbotron">
+                    <div class="container">
+                        <h4>Flux Level</h4>
+                        <div class="progress">
+                            <div class='progress-bar bg-success progress-bar-striped progress-bar-animated' role='progressbar'  aria-valuemin='0' aria-valuemax='21000' id='fluxLevelBar' width="100%"></div>
+                        </div>
+                        
+                        <p>You have <b class="text-warning"><span id="fluxLevelText">Flux Level</span> Points</b>, and you need a total of <b class="text-success">21,000 Points</b> to achieve Flux Master status!</p>
                     </div>
                 </div>
-                <br />
             </div>
         
             <div class="col-md-6" id="myHoldings">
@@ -536,6 +544,18 @@
                 </div>
             </div>
         </div>
+    
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><div id="current"></div></a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+        <ul class="navbar-nav mr-auto">
+          
+        </ul>
+      </div>
+    </nav>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
