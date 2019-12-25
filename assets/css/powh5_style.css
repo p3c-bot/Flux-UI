@@ -10,3 +10,11 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+.fluxElementDark1 {
+    background-color: rgba(0,0,0,0.40);
+}
+
+.fluxElementDark2 {
+    background-color: rgba(0,0,0,0.15);
+}

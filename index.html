@@ -18,25 +18,36 @@
     <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps,Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     
-    <link rel="stylesheet" href="assets/css/semantic.min.css">
     <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/semantic.min.css">
     <link rel="stylesheet" href="assets/css/alertify.min.css" />
+    
+  
+    
     <!-- Default theme -->
     <link rel="stylesheet" href="assets/css/themes/default.min.css" />
     <link rel="stylesheet" href="assets/css/farmer.css" />
     <link rel="stylesheet" href="assets/css/powh5_style.css" />
     
+    <!-- Plugins -->
+    <link rel="stylesheet" href="assets/css/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/tether.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.theme.min.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
     <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap theme -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css">
 
     <link rel="icon" type="image/png" href="assets/img/etc.png">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"> Flux UI</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-inverse fluxElementDark1 fixed-top">
+        <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -71,43 +82,44 @@
     <br />
     <br />
     <br />
-    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
-    <coingecko-coin-price-marquee-widget  coin-ids="universalcoin,ethereum-classic,saturn-classic-dao-token" currency="usd" background-color="#000000" locale="en"></coingecko-coin-price-marquee-widget>
     <br />
-    
-    <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade show active" id="wallet">
-            <!-- Wallet Container -->
     
     <div class="container">
         <div class="row">
+            <div class="col">
+                <h3 class="text-center">
+                    <span class="badge badge-pill badge-inverse fluxElementDark2">
+                        Balance <span class="badge badge-pill badge-success"><span id="myCropTokens"></span> Points</span>
+                    </span>
+                </h3>
+                <br />
+            </div>
+            
+            <div class="col">
+                <h3 class="text-center">
+                    <span class="badge badge-pill badge-inverse fluxElementDark2">
+                        Value <span class="badge badge-pill badge-info"><span id="myETCValue" class=""></span> ETC</span>
+                    </span>
+                </h3>
+                <br />
+            </div>
+            
+            <div class="col">
+                <h3 class="text-center">
+                    <span class="badge badge-pill badge-inverse fluxElementDark2">
+                        Dividends <span class="badge badge-pill badge-primary"><span id="myCropDividends" class=""></span> ETC</span>
+                    </span>
+                </h3>  
+                <br />
+            </div>
+        </div>
+        
+        <div class="row">
             <div class="col-md-6">
-                <div class="jumbotron">
-                    <div class="container">
-                        <h3>Balance: <span class="badge badge-pill badge-success"><span id="myCropTokens"></span> Points</span></h3>
-                        <h5>
-                            <span class="badge badge-pill badge-secondary">Value: <span id="myETCValue" class=""></span> ETC</span><br />
-                            <span class="badge badge-pill badge-secondary">Dividends: <span id="myCropDividends" class=""></span> ETC</span>
-                        </h5>
-                        <div class="row">
-                            <div class="col">
-                                <a class="btn btn-block btn-success" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a>
-                            </div>
-                            
-                            <div class="col">
-                                <a class="btn btn-block btn-danger" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a>
-                            </div>
-                            
-                            <div class="col">
-                                <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-                
-                <div class="jumbotron">
-                    <div class="container">
-                        <h4>Flux Level</h4>
+                <div class="card border-primary">
+                    <div class="card-header bg-light text-green">Flux Level</div>
+                    
+                    <div class="card-body">
                         <div class="progress">
                             <div class='progress-bar bg-success progress-bar-striped progress-bar-animated' role='progressbar'  aria-valuemin='0' aria-valuemax='21000' id='fluxLevelBar' style="width: 100%"></div>
                         </div>
@@ -115,7 +127,24 @@
                         
                         <p>You have <b class="text-warning"><span id="fluxLevelText">Flux Level</span> Points</b>, and you need a total of <b class="text-success">21,000 Points</b> to achieve Flux Master status!</p>
                     </div>
+                    
+                    <div class="card-footer">
+                        <div class="row">
+                    <div class="col">
+                        <a class="btn btn-block btn-success" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a>
+                    </div>
+                            
+                    <div class="col">
+                        <a class="btn btn-block btn-danger" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a>
+                    </div>
+                            
+                    <div class="col">
+                        <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a>
+                    </div>
                 </div>
+                    </div>
+                </div>
+                <br />
             </div>
         
             <div class="col-md-6" id="myHoldings">
@@ -197,13 +226,6 @@
             </div>
             <br />
         </div>
-        </div>
-    </div>
-    
-    
-        </div>
-        <div class="tab-pane fade" id="games">
-            <!-- Games Container -->
         </div>
     </div>
     
@@ -563,6 +585,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/tether.min.js"></script>
     <script src="assets/js/alertify.min.js"></script>
     <script src="assets/js/semantic.min.js"></script>
     <script src="assets/js/moment.min.js"></script>
