@@ -3,13 +3,7 @@ html, body {
     overflow-x: hidden;
 }
 
-body {
-  background: url('../img/wallpaper_1.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
+
 
 .fluxElementDark1 {
     background-color: rgba(0,0,0,0.75);

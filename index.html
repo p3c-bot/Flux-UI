@@ -40,13 +40,13 @@
     <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
     <link rel="icon" type="image/png" href="assets/img/etc.png">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-inverse fluxElementDark1 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-inverse fixed-top">
         <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -134,7 +134,7 @@
             <div class="col-md-3">
                 <h5 class="text-center">
                     My Value<br />
-                    <span class="badge badge-pill badge-warning"><span id="myETCValue" class=""></span> ETC</span>
+                    <span class="badge badge-pill badge-primary"><span id="myETCValue" class=""></span> ETC</span>
                     <br />
                 </h5>
                 <br />
@@ -152,19 +152,22 @@
             <div class="col-md-3">
                 <h5 class="text-center">
                     RainMaker<br />
-                    <span class="badge badge-pill badge-warning"><span id="rainMakerTokens"></span> Points (<span id="rainMakerDividends"></span> ETC)</span>
+                    <span class="badge badge-pill badge-primary"><span id="rainMakerTokens"></span> Points (<span id="rainMakerDividends"></span> ETC)</span>
                     <br />
                 </h5>
+                <br />
             </div>
             
             <div class="col-md-3">
                 <h5 class="text-center">
                     Divies<br />
-                    <span class="badge badge-pill badge-warning"><span id="diviesBalance"></span> ETC</span>
+                    <span class="badge badge-pill badge-primary"><span id="diviesBalance"></span> ETC</span>
                     <br />
                 </h5>
+                <br />
             </div>
         </div>
+        <br />
         
         <div class="row">
             <div class="col" id="myHoldings">
@@ -173,13 +176,16 @@
         </div>
         
         <div class="row">
-            <div class="col card border-info">
-                <div class="card-header bg-default text-white">Price</div>
-                <div class="card-body">
-                    <small>(Over last 7 Days)</small>
-                    <svg id="container"></svg>
-                    <a href="https://www.xenobank.com/" target="_blank" style="font-size:10px;">(More Data at Xenobank.com)</a>
+            <div class="col">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">Price</div>
+                    <div class="card-body bg-dark">
+                        <small>(Over last 7 Days)</small>
+                        <svg id="container"></svg>
+                        <a href="https://www.xenobank.com/" target="_blank" style="font-size:10px;">(More Data at Xenobank.com)</a>
+                    </div>
                 </div>
+                <br />
             </div>
         </div>
         <br />
