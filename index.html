@@ -56,22 +56,34 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        Broadcasts <span class="caret"></span>
+                        <i class="fas fa-bullhorn"></i> Broadcasts <span class="caret"></span>
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right fluxElementDark2" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorPurchaseModal">Buy Broadcast</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorInstructorModal">Broadcast Help</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorDetailsModal" target="_blank">Current Broadcast</a>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#statsModal">Stats</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#faqsModal">FAQs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#statsModal"><i class="fas fa-info"></i> Stats</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#faqsModal"><i class="fas fa-question"></i> FAQs</a></li>
             </ul>
             
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#referralModal"><i class="fas fa-share"></i> Referrals</a></li>
                 
-                <li class="nav-item"><a class="nav-link" href="https://commonwealth.gg" target="_blank">Commonwealth </a></li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Advanced <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right fluxElementDark2" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" id="distribute"><i class="fas fa-share-alt"></i> Split Divies</a>
+                        <a class="dropdown-item" href="#" id="rainMaker"><i class="fas fa-cloud-rain"></i> Activate RainMaker</a>
+                        <a class="dropdown-item" href="#" id="reinvest"><i class="recycle icon"></i>Compound Dividends</a>
+                        <a class="dropdown-item" href="#" id="withdraw"><i class="money bill alternate icon"></i>Take Dividends</a>
+                    </div>
+                </li>
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
@@ -85,148 +97,92 @@
     <br />
     
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3 class="text-center">
-                    <span class="badge badge-pill badge-inverse fluxElementDark2">
-                        Balance <span class="badge badge-pill badge-success"><span id="myCropTokens"></span> Points</span>
-                    </span>
-                </h3>
-                <br />
-            </div>
-            
-            <div class="col">
-                <h3 class="text-center">
-                    <span class="badge badge-pill badge-inverse fluxElementDark2">
-                        Value <span class="badge badge-pill badge-info"><span id="myETCValue" class=""></span> ETC</span>
-                    </span>
-                </h3>
-                <br />
-            </div>
-            
-            <div class="col">
-                <h3 class="text-center">
-                    <span class="badge badge-pill badge-inverse fluxElementDark2">
-                        Dividends <span class="badge badge-pill badge-primary"><span id="myCropDividends" class=""></span> ETC</span>
-                    </span>
-                </h3>  
-                <br />
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card border-primary">
-                    <div class="card-header bg-light text-green">Flux Level</div>
-                    
-                    <div class="card-body">
+        <div class="row jumbotron">
+            <div class="container">
+                <div class="row">
+                    <h1><span id="myCropTokens"></span> Points</h1><br />
+                </div>
+                
+                <div class="row">
+                    <div class="col">
                         <div class="progress">
                             <div class='progress-bar bg-success progress-bar-striped progress-bar-animated' role='progressbar'  aria-valuemin='0' aria-valuemax='21000' id='fluxLevelBar' style="width: 100%"></div>
                         </div>
                         <br />
                         
-                        <p>You have <b class="text-warning"><span id="fluxLevelText">Flux Level</span> Points</b>, and you need a total of <b class="text-success">21,000 Points</b> to achieve Flux Master status!</p>
+                        <p>You have <b class="text-warning"><span id="fluxLevelText">Flux Level</span> Points</b>, and you need a total of <b class="text-success">21,000 Points</b> to achieve Flux Master status!</p><br />
                     </div>
-                    
-                    <div class="card-footer">
-                        <div class="row">
+                </div>
+                
+                <div class="row">
                     <div class="col">
-                        <a class="btn btn-block btn-success" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a>
+                        <a class="btn btn-block btn-outline-success" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a>
                     </div>
                             
                     <div class="col">
-                        <a class="btn btn-block btn-danger" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a>
+                        <a class="btn btn-block btn-outline-danger" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a>
                     </div>
                             
                     <div class="col">
-                        <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a>
+                        <a class="btn btn-block btn-outline-primary" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a>
                     </div>
                 </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center">
+                    My Value<br />
+                    <span class="badge badge-pill badge-warning"><span id="myETCValue" class=""></span> ETC</span>
+                    <br />
+                </h5>
                 <br />
             </div>
+            
+            <div class="col-md-3">
+                <h5 class="text-center">
+                    My Dividends<br />
+                    <span class="badge badge-pill badge-primary"><span id="myCropDividends" class=""></span> ETC</span>
+                    <br />
+                </h5>
+                <br />
+            </div>
+
+            <div class="col-md-3">
+                <h5 class="text-center">
+                    RainMaker<br />
+                    <span class="badge badge-pill badge-warning"><span id="rainMakerTokens"></span> Points (<span id="rainMakerDividends"></span> ETC)</span>
+                    <br />
+                </h5>
+            </div>
+            
+            <div class="col-md-3">
+                <h5 class="text-center">
+                    Divies<br />
+                    <span class="badge badge-pill badge-warning"><span id="diviesBalance"></span> ETC</span>
+                    <br />
+                </h5>
+            </div>
+        </div>
         
-            <div class="col-md-6" id="myHoldings">
-                <div class="card border-success">
-                    <div class="card-header bg-default text-white">Overview</div>
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h6>RainMaker</h6>
-                                    <h5>
-                                        <span class="badge badge-pill badge-secondary">
-                                            <span id="rainMakerTokens"></span> Points (<span id="rainMakerDividends"></span> ETC)
-                                        </span>
-                                        <br />
-                                    </h5>
-                                    <br />
-                                </div>
-                            
-                                <div class="col-md-6">
-                                    <h6>Divies</h6>
-                                    <h5><span class="badge badge-pill badge-success"><span id="diviesBalance"></span> ETC</span></h5>
-                                    <br />
-                                </div>
-                            </div>
-                        
-                            <div class="row">
-                                <div class="col">
-                                    <br />
-                                    <div id="masternode" class="ui segments masternode hidden">
-                                        <div class="ui secondary segment">
-                                            <div class="link masternode">
-                                                <a id="masternodeLink" href="/?ref=0x">https://flux.arcadium.network/index.html?ref=0x123456</a> <button id="copyMNButton" class="ui primary basic button copy" data-clipboard-text="">
-                                                <i class="copy icon"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p>API Key:
-                                        <strong>33%</strong> of the community fee (3% of total) goes to the link creator when Points are bought with their link. <b>You must have 1 Point for your link to be active.</b> <a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank">Learn more.</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col" id="myHoldings">
                 
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col">
-                            <button id="reinvest" class="btn btn-block btn-secondary btn-outline-default">
-                                <i class="recycle icon"></i>Compound Dividends
-                            </button><br />
-                        </div>
-                        
-                        <div class="col">
-                            <button id="withdraw" class="btn btn-block btn-secondary btn-outline-default">
-                                <i class="money bill alternate icon"></i>Take Dividends
-                            </button><br />
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col text-center">
-                            <a class="btn btn-block btn-secondary btn-outline-default" id="rainMaker" href="#">
-                                Activate RainMaker
-                            </a>
-                            <small><a href="https://medium.com/@masterhax/what-is-the-rainmaker-contract-bb0a77bc3b91" target="_blank">Learn about RainMaker</a></small>
-                            <br />
-                            
-                        </div>
-                        
-                        <div class="col">
-                            <a class="btn btn-block btn-secondary btn-outline-default" id="distribute" href="#">
-                                Activate Divies
-                            </a><br />
-                        </div>
-                    </div>  
+        </div>
+        </div>
+        
+        <div class="row">
+            <div class="col card border-info">
+                <div class="card-header bg-default text-white">Price</div>
+                <div class="card-body">
+                    <small>(Over last 7 Days)</small>
+                    <svg id="container"></svg>
+                    <a href="https://www.xenobank.com/" target="_blank" style="font-size:10px;">(More Data at Xenobank.com)</a>
                 </div>
             </div>
-            <br />
         </div>
-        </div>
+        <br />
     </div>
     
     <footer class="container jumbotron py-5">
@@ -274,6 +230,43 @@
             </div>
         </div>
     </footer>
+    
+    <div class="modal" id="referralModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Referrals</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div id="masternode" class="ui segments masternode hidden">
+                                <div class="link masternode">
+                                    <a id="masternodeLink" href="/?ref=0x">https://flux.arcadium.network/index.html?ref=0x123456</a>
+                                    <button id="copyMNButton" class="btn btn-primary" data-clipboard-text="">
+                                        <i class="copy icon"></i> Copy Address
+                                    </button>
+                                </div>  
+                            </div>
+                            <p>API Key:
+                                <strong>33%</strong> of the community fee (3% of total) goes to the link creator when Points are bought with their link. <b>You must have 1 Point for your link to be active.</b> <a href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank">Learn more.</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="#">Button to Copy</a>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="modal" id="donateModal">
         <div class="modal-dialog">
@@ -586,6 +579,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/d3.v5.min.js"></script>
     <script src="assets/js/alertify.min.js"></script>
     <script src="assets/js/semantic.min.js"></script>
     <script src="assets/js/moment.min.js"></script>
@@ -597,9 +591,11 @@
     <script src="assets/lib/home.js"></script>
     <script src="assets/lib/contracts.js"></script>
     <script src="assets/lib/pure.js"></script>
+    <script src="assets/lib/prices.js"></script>
     <script src="assets/lib/rainmaker.js"></script>
     <script src="assets/lib/masternode.js"></script>
     <script src="assets/lib/sponsor.js"></script>
     <script src="assets/lib/use.js"></script>
+    <script src="assets/lib/charts.js"></script>
 </body>
 </html>
