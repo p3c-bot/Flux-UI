@@ -1,0 +1,20 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  background: url('../img/wallpaper_2.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.fluxElementDark1 {
+    background-color: rgba(0,0,0,0.75);
+}
+
+.fluxElementDark2 {
+    background-color: rgba(0,0,0,0.15);
+}
