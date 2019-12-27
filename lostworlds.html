@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@ArcadiumETC" />
+    <meta name="twitter:title" content="Flux UI" />
+    <meta name="twitter:description" content="Flux UI is an alternative interface for Commonwealth Planetary Prosperity - Try it today!" />
+    <meta name="twitter:image" content="https://flux.arcadium.network/assets/img/coin.png"/>
+    <meta property="og:url" content="https://flux.arcadium.network" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Flux UI" />
+    <meta property="og:description" content="Flux UI is an alternative interface for Commonwealth Planetary Prosperity - Try it today!" />
+    <meta property="og:image" content="https://flux.arcadium.network/assets/img/coin.png"/>
+    <title>Flux UI</title>
+    <meta charset="utf8">
+    <meta name="description" content="Fast, passive payments for anyone using Ethereum Classic. Provides a steady source of income for entrepeneuers and nomads. Use algorithms and sound money to plan for the future and gain peace of mind.">
+    <meta name="keywords" content="Payments, Payment Processing, Live Streaming, ETC Dapps,Ethereum Classic, ETC, Universal Basic Income Dapp, UBI Dapp, UBI Ethereum, Universal Basic income Ethereum, Employment Insurance, Blockchain Insurance, Coops, Cooperative, Blockchain, Blockchain Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/alertify.min.css" />
+
+    <link rel="stylesheet" href="assets/css/themes/default.min.css" />
+    <link rel="stylesheet" href="assets/css/farmer.css" />
+    <link rel="stylesheet" href="assets/css/arcadium_medieval.css" />
+    
+    <!-- Plugins -->
+    <link rel="stylesheet" href="assets/css/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/tether.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.theme.min.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="icon" type="image/png" href="assets/img/etc.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="fas fa-bullhorn"></i> Broadcasts <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right fluxElementDark2" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorPurchaseModal">Buy Broadcast</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorInstructorModal">Broadcast Help</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sponsorDetailsModal" target="_blank">Current Broadcast</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#statsModal"><i class="fas fa-info"></i> Stats</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#faqsModal"><i class="fas fa-question"></i> FAQs</a></li>
+            </ul>
+            
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#referralModal"><i class="fas fa-share"></i> Referrals</a></li>
+                
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Advanced <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right fluxElementDark2" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" id="distribute"><i class="fas fa-share-alt"></i> Split Divies</a>
+                        <a class="dropdown-item" href="#" id="rainMaker"><i class="fas fa-cloud-rain"></i> Activate RainMaker</a>
+                        <a class="dropdown-item" href="#" id="reinvest"><i class="recycle icon"></i>Compound Dividends</a>
+                        <a class="dropdown-item" href="#" id="withdraw"><i class="money bill alternate icon"></i>Take Dividends</a>
+                    </div>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-secondary btn-block my-2 my-sm-0" type="submit"><i class="chess rook icon"></i> <span id="etcInContract">0</span> (<span id="sizeUSD">   </span> USD)</button>
+            </form>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <br />
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container jumbotron text-center">
+                    <div class="row">
+                        <div class="col">
+                            <img src="./assets/img/icon_game.png" alt="Logo" style="width:75px;"><br />
+                            <h4>Arcadium: Lost Worlds</h4>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col">
+                            <br />
+                            <p>
+                                Collect Points, Earn Dividends, and Rule the Land!<br />
+                                <a href="#" class="btn btn-block btn-dark">Learn More</a>
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="container jumbotron text-center">
+                    <div class="row">
+                        <h1 class="text-center"><span id="myCropTokens"></span> Points</h1><br />
+                    </div>
+                
+                    <div class="row">
+                        <div class="col">
+                            <div class="progress">
+                                <div class='progress-bar bg-success progress-bar-striped progress-bar-animated' role='progressbar'  aria-valuemin='0' aria-valuemax='21000' id='fluxLevelBar' style="width: 100%"></div>
+                            </div>
+                            <br />
+                        
+                            <p>You have <b class="text-warning"><span id="fluxLevelText">Flux Level</span> Points</b>, and you need a total of <b class="text-success">21,000 Points</b> to achieve Flux Master status!</p><br />
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col">
+                            <a class="btn btn-block btn-success" href="#" data-toggle="modal" data-target="#buyTokensModal">Buy</a>
+                        </div>
+                            
+                        <div class="col">
+                            <a class="btn btn-block btn-danger" href="#" data-toggle="modal" data-target="#sellTokensModal">Sell</a>
+                        </div>
+                            
+                        <div class="col">
+                            <a class="btn btn-block btn-primary" href="#" data-toggle="modal" data-target="#transferTokensModal">Transfer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-center">
+                    <img src="assets/games/assets/wingedShield/a_shield_winged_demonhide.png" />
+                    <span class="badge badge-pill badge-dark">
+                        My Value 
+                        <span class="badge badge-pill badge-success"><span id="myETCValue" class=""></span> ETC</span>
+                    </span>
+                    <br />
+                </h3>
+                <br />
+            </div>
+            
+            <div class="col-md-6">
+                <h3 class="text-center">
+                    <img src="assets/games/assets/wingedShield/a_shield_winged_gold.png" />
+                    <span class="badge badge-pill badge-dark">
+                        My Dividends 
+                        <span class="badge badge-pill badge-danger"><span id="myCropDividends" class=""></span> ETC</span>
+                    </span>
+                    <br />
+                </h3>
+                <br />
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-center">
+                    <img src="assets/games/assets/wingedShield/a_shield_winged_bronze.png" />
+                    <span class="badge badge-pill badge-dark">
+                        Divies 
+                        <span class="badge badge-pill badge-warning"><span id="diviesBalance"></span> ETC</span>
+                    </span>
+                    <br />
+                </h3>
+                <br />
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="text-center">
+                    <img src="assets/games/assets/wingedShield/a_shield_winged_copper.png" />
+                    <span class="badge badge-pill badge-dark">
+                        RainMaker 
+                        <span class="badge badge-pill badge-info"><span id="rainMakerTokens"></span> Points (<span id="rainMakerDividends"></span> ETC)</span>
+                    </span>
+                    <br />
+                </h3>
+                <br />
+            </div>
+        </div>
+        <br />
+        
+        <div class="row">
+            <div class="col" id="myHoldings">
+                
+        </div>
+        </div>
+        
+        <div class="row jumbotron bg-dark">
+            <div class="container">
+                <h1>Price</h1>
+                <svg id="container"></svg>
+                <a href="https://www.xenobank.com/" target="_blank" style="font-size:10px;">(More Data at Xenobank.com)</a>
+            </div>
+            <br />
+        </div>
+    </div>
+    <br />
+    
+    <footer class="container jumbotron bg-dark py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-muted">Thank you for using Flux UI! If you find it useful, I could always do with another cup of coffee (or some extra Dividends)! Have a great day!</small>
+                <a class="btn btn-sm btn-primary btn-block" href="#" data-toggle="modal" data-target="#donateModal">Donate to Arcadium</a><br />
+            </div>
+            <div class="col-6 col-md">
+                <h5>Arcadium</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://flux.arcadium.network">Flux UI</a></li>
+                    <li><a class="text-muted" href="https://vault.arcadium.network" target="_blank">Vault</a></li>
+                    <li><a class="text-muted" href="https://twitter.com/ArcadiumETC" target="_blank">Twitter</a></li>
+                    <li><a class="text-muted" href="https://github.com/ArcadiumNetwork" target="_blank">GitHub</a></li>
+                    <li><a class="text-muted" href="https://t.me/ArcadiumNetwork" target="_blank">Telegram</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Commonwealth</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://commonwealth.gg" target="_blank">commonwealth.gg</a></li>
+                    <li><a class="text-muted" href="https://twitter.com/P3COfficial" target="_blank">Twitter</a></li>
+                    <li><a class="text-muted" href="https://medium.com/@masterhax" target="_blank">Medium</a></li>
+                    <li><a class="text-muted" href="https://discord.gg/jzZa4SF" target="_blank">Discord</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://blockscout.com/etc/mainnet/address/0xde6fb6a5adbe6415cdaf143f8d90eb01883e42ac/contracts" target="_blank">Smart Contract</a></li>
+                    <li><a class="text-muted" href="https://blockscout.com/etc/mainnet/address/0x2078adfc93c4d059f8d038cd699bacada37c76e7/contracts" target="_blank">RainMaker</a></li>
+                    <li><a class="text-muted" href="https://blockscout.com/etc/mainnet/address/0xd1a231ae68ebe7aec3ecdaeac4c0776eb525d969/contracts" target="_blank">Divies</a></li>
+                    <li><a class="text-muted" href="https://github.com/p3c-bot/p3c-bot.github.io" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="https://twitter.com/ArcadiumETC" target="_blank">Twitter</a></li>
+                    <li><a class="text-muted" href="https://instagram.com/arcadiumnetwork" target="_blank">Instagram</a></li>
+                    <li><a class="text-muted" href="https://t.me/ArcadiumNetwork" target="_blank">Telegram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <br />
+    
+    <div class="modal" id="referralModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Referrals</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div id="masternode" class="ui segments masternode hidden">
+                                <div class="link masternode">
+                                    <a id="masternodeLink" href="/?ref=0x">https://flux.arcadium.network/index.html?ref=0x123456</a>
+                                    <button id="copyMNButton" class="btn btn-block btn-primary" data-clipboard-text="">
+                                        <i class="copy icon"></i> Copy Address
+                                    </button>
+                                </div>  
+                            </div>
+                            <p>API Key:
+                                <strong>33%</strong> of the community fee (3% of total) goes to the link creator when Points are bought with their link. <b>You must have 1 Point for your link to be active.</b><br />
+                                <a class="btn btn-block btn-primary" href="https://medium.com/@masterhax/how-do-referral-links-work-in-p3c-13c8242fd9d9" target="_blank">Learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                       
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="donateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Donate to Arcadium</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-center">
+                                <b>Send me some Points</b>
+                                <img src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=0x8C3384569C5174E8Fe196b007fBbf4557475c6F5&amp;choe=UTF-8" alt="Flux Donations Address">
+                                <br />
+                                <small>Donating Points to Arcadium helps to motivate further development!</small><br />
+                            </div>
+                            
+                            <div class="col text-center">
+                                <b>Send Divies some ETC</b>
+                                <img src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=0xd1A231ae68eBE7Aec3ECDAEAC4C0776eB525D969&amp;choe=UTF-8" alt="Flux Donations Address">
+                                <br />
+                                <small>Donating ETC to Divies helps the entire Commonwealth! Thank You!</small><br />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        
+                    </div>
+                    <p>Thank you very much for considering a donation to Arcadium! Before you continue, please be aware that anything sent to Arcadium addresses cannot be refunded - so please, only send what you can absolutely afford. Donations received by Arcadium will be used to fund future development efforts and new projects. Donations of ETC to Divies will help the entire Commonwealth.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modals -->
+    <div class="modal" id="buyTokensModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-dollar-sign"></i>  Buy Points</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body" id="buyArea">
+                        <h3><strong>Price: </strong><span id="tokenBuyGet">0.0000</span></h3>
+                        <small>Right now, 1 Point costs <b><span id="priceUSD"></span> USD</b>.</small>
+                        <input placeholder="ETC to Spend..." class="form-control" type="text" id="buyInput"><br />
+                        <button id="buy" class="btn btn-block btn-success">Buy Points</button>
+                        <div id="buyAmount" class="ui fluid large basic green button approx no click buy-amount">
+                            <i>How much will you buy?</i>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="sellTokensModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-dollar-sign"></i>  Sell Points</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <h3><strong>Price: </strong><span class="buy-price" id="tokenSellGet">0.00</span></h3>
+                        <input placeholder="Points to Sell..." class="form-control" type="text" id="sellInput"><br />
+                        <button id="sell" class="btn btn-block btn-danger">Sell Points</button>
+                        <div id="sellAmount" class="ui fluid large basic blue button no click approx" style="margin-top:10px;">
+                            <i>How much will you sell?</i>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="transferTokensModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Transfer Points</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <b>Pure Address:</b> <span id="myCropAddress" class="approx"></span>
+                        <button id="copyAddressButton" class="btn btn-block btn-warning" data-clipboard-text=""><i class="copy icon"></i> Copy Address</button><br />
+                        <input type="text" id="transferAddress" class="form-control" placeholder="Destination Address"><br />
+                        <input type="text" id="transferTokenCount" class="form-control" placeholder="Amount of Points"><br />
+                        <button id="transfer" class="btn btn-block btn-info"><i class="right arrow icon"></i> Transfer</button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="modal" id="faqsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  FAQs</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <h3>What is Flux UI?</h3>
+                            <p>
+                                Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                                <br />
+                                Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://commonwealth.gg/use.html">The original Commonwealth interface</a>.
+                            </p>
+                            <a href="https://github.com/arcadiumnetwork/Flux-UI" class="btn btn-secondary btn-block" target="_blank">GitHub</a><br />
+                            <hr />
+                            <br />
+                        </div>
+                        <br />
+                        
+                        <div class="row">
+                            <h3>About the Project</h3>
+                            <p>
+                                If you have any questions about Flux UI, or if you would like to build upon it, the links below may be of great help to you. Of course, feel free to join our Community on Telegram, too!
+                            </p>
+                            <a href="https://t.me/Flux UIETC" class="btn btn-primary btn-block" target="_blank">Join the Community</a><br />
+                            <hr />
+                            <br />
+                        </div>
+                        <br />
+                        
+                        <div class="row">
+                            <h3>Learn More</h3>
+                            <p>
+                                Flux UI is a new project built upon Commonwealth - a Planetary Prosperity for the Future. It offers an alternative interface to manage your Points and Dividends, and will offer more unique features as development continues.<br />
+                                <br />
+                                Flux UI has been developed atop the Pure model of P3C - so you will have tokens directly in your wallet, rather than in a Farm or Crop. If you wish to use these features, you can access them via <a href="https://commonwealth.gg/use.html">The original Commonwealth interface</a>.
+                            </p>
+                            <a href="https://commonwealth.gg" class="btn btn-info btn-block" target="_blank">Commonwealth</a>
+                        </div>
+                        <br />
+                        
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="statsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Commonwealth Stats</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="createdStats">
+                            <h3>Dividends Distributed: <b><span id="totalDividends"></span></b> <i>(about <span id="dividendsUSD"></span> USD)</i></h3>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Sponsor Modals -->
+    <div class="modal" id="sponsorPurchaseModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Buy Adspace</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form class="ui form">
+                        <div class="form-group">
+                            <label>Img URL (30x30) - Optional:</label>
+                            <input type="text" id="imgLink" class="form-control" placeholder="https://i.imgur.com/7iEyv4Q.png">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Text</label>
+                            <input type="text" id="text" class="form-control" placeholder="New ICO incoming!">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link Text</label>
+                            <input type="text" id="hyperlinkText" class="form-control" placeholder="Click Here.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link (include http/https):</label>
+                            <input type="text" id="hyperlink" class="form-control" placeholder="https://company.com">
+                        </div>
+                    </form>
+                    
+                    <div class="row sponsor">
+                        <p>Preview: </p>
+                        <div id="sampleAd" class="current"></div>
+                    </div>
+                    <button id="sample"   class="btn btn-block btn-info">Generate Preview</button>
+                    <button id="purchase" class="btn btn-block btn-success">Purchase for <div id="price">price</div></button>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="sponsorInstructorModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  How to Use</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>
+                            Store your ad on-chain and show it across the Commonwealth network!<br />
+                            There are 2 simple steps to broadcasting on the Commonwealth network.
+                        </p>
+                        <ul>
+                            <li>1. Make sure you have an <a target="_blank" href="https://forum.saturn.network/t/how-to-install-saturn-wallet-create-a-new-account/1302">ETC wallet</a> with ETC in it.</li>
+                            <li>2. Fill out the fields below "Buy It!" and click "Purchase" when ready.</li>
+                        </ul>
+                        <h3>Rules: </h3>
+                        <ul>
+                            <li>Length of Text AND Link Text less than 140 characters. Img link 30 x 30.</li>
+                            <li>Your image link should link to the actual image, make sure URL ends with .jpeg , .jpg , .gif , .svg, or .png</li>
+                            <li>Broadcast is stored permanently on the blockchain and can be read by any Ethereum Classic node! Also hosted on our <a target="_blank" href="https://api.commonwealth.gg/sponsor/">server</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="modal" id="sponsorDetailsModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Sponsor Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="currentImg" class="sponsorPrice">1234/token</div>
+                        <h3><span id="currentText" class="sponsorPrice">1234/token</span></h3>
+                        <p><span id="currentLinkText" class="sponsorPrice">1234/token</span></p>
+                        <span id="currentLink" class="btn btn-block btn-primary">1234/token</span>
+                        <hr />
+                        <p>
+                            <b>Owner <span id="owner"></span></b>
+                            <i><span id="time" class="sponsorPrice"></span><span id="purchasePrice" class="sponsorPrice"></span></i>
+                        </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><div id="current"></div></a>
+      <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+        <ul class="navbar-nav mr-auto">
+          
+        </ul>
+          
+          <ul class="navbar-nav ml-auto">
+            
+          </ul>
+      </div>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/d3.v5.min.js"></script>
+    <script src="assets/js/alertify.min.js"></script>
+    <script src="assets/js/semantic.min.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/web3.min.js"></script>
+    <script src="assets/js/clipboard.min.js"></script>
+    <script src="assets/js/lodash.min.js"></script>
+
+    <script src="assets/lib/util.js"></script>
+    <script src="assets/lib/home.js"></script>
+    <script src="assets/lib/contracts.js"></script>
+    <script src="assets/lib/pure.js"></script>
+    <script src="assets/lib/prices.js"></script>
+    <script src="assets/lib/rainmaker.js"></script>
+    <script src="assets/lib/masternode.js"></script>
+    <script src="assets/lib/sponsor.js"></script>
+    <script src="assets/lib/use.js"></script>
+    <script src="assets/lib/charts.js"></script>
+</body>
+</html>
