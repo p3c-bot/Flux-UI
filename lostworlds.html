@@ -44,7 +44,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html"><img src="./assets/img/logo_transparent.png" alt="Logo" style="width:40px;"></a>
+        <a class="navbar-brand" href="lostworlds.html"><img src="./assets/img/icon_game.png" alt="Logo" style="width:40px;"> Flux: Lost Worlds</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -71,7 +71,21 @@
                 
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        Advanced <span class="caret"></span>
+                        <i class="fas fa-palette"></i> Theme <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right fluxElementDark2" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.html"> Current</a>
+                        <a class="dropdown-item" href="classic.html"> Classic</a>
+                        <a class="dropdown-item" href="modern.html"> Modern</a>
+                        <a class="dropdown-item" href="future.html"> Future</a>
+                        <a class="dropdown-item" href="lostworlds.html"> Lost Worlds</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="fas fa-sliders-h"></i> Advanced <span class="caret"></span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right fluxElementDark2" aria-labelledby="navbarDropdown">
@@ -100,7 +114,7 @@
                     <div class="row">
                         <div class="col">
                             <img src="./assets/img/icon_game.png" alt="Logo" style="width:75px;"><br />
-                            <h4>Arcadium: Lost Worlds</h4>
+                            <h4>Flux: Lost Worlds</h4>
                         </div>
                     </div>
                 
@@ -109,7 +123,7 @@
                             <br />
                             <p>
                                 Collect Points, Earn Dividends, and Rule the Land!<br />
-                                <a href="#" class="btn btn-block btn-dark">Learn More</a>
+                                <a href="#" class="btn btn-block btn-dark" data-toggle="modal" data-target="#lostworldsModal">Learn More</a>
                                 <br />
                             </p>
                         </div>
@@ -268,6 +282,27 @@
         </div>
     </footer>
     <br />
+    
+    <div class="modal" id="lostworldsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><i class="fas fa-long-arrow-alt-right"></i>  Flux: Lost Worlds</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                        This is a gamified version of the Flux interface - it performs in the same way as the other themes, with an old-school RPG-inspired twist!
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="modal" id="referralModal">
         <div class="modal-dialog">
